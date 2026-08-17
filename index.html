@@ -3,10 +3,6 @@
 
 <head>
 
-    <!-- =====================================================
-         META
-    ====================================================== -->
-
     <meta charset="UTF-8">
 
     <meta
@@ -80,7 +76,7 @@
         :root {
             --primary: #17365d;
             --primary-dark: #102a49;
-            --primary-light: #315b88;
+            --primary-soft: #eef3f8;
 
             --accent: #f5b800;
             --accent-dark: #d79f00;
@@ -126,7 +122,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 105px;
+            scroll-padding-top: 110px;
         }
 
         body {
@@ -173,24 +169,18 @@
 
         .reveal {
             opacity: 0;
-
-            transform:
-                translateY(32px);
+            transform: translateY(32px);
 
             transition:
                 opacity .8s var(--ease),
                 transform .8s var(--ease);
 
-            will-change:
-                opacity,
-                transform;
+            will-change: opacity, transform;
         }
 
         .reveal.show {
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
         .reveal-delay-1 {
@@ -219,7 +209,6 @@
             align-items: center;
 
             gap: 8px;
-
             margin-bottom: 14px;
 
             color: var(--accent);
@@ -230,7 +219,6 @@
             font-weight: 800;
 
             letter-spacing: 1.8px;
-
             text-transform: uppercase;
         }
 
@@ -250,17 +238,10 @@
 
             font-family: "Montserrat", sans-serif;
 
-            font-size:
-                clamp(
-                    2rem,
-                    4vw,
-                    3.2rem
-                );
-
+            font-size: clamp(2rem, 4vw, 3.2rem);
             font-weight: 800;
 
             line-height: 1.08;
-
             letter-spacing: -1.1px;
 
             overflow-wrap: anywhere;
@@ -278,7 +259,6 @@
             color: var(--muted);
 
             font-size: .87rem;
-
             line-height: 1.9;
 
             overflow-wrap: anywhere;
@@ -287,13 +267,11 @@
         .section-description.center {
             margin-left: auto;
             margin-right: auto;
-
             text-align: center;
         }
 
         .section-heading-center {
             margin-bottom: 46px;
-
             text-align: center;
         }
 
@@ -301,10 +279,7 @@
             width: 52px;
             height: 4px;
 
-            margin:
-                17px
-                0
-                20px;
+            margin: 17px 0 20px;
 
             background: var(--accent);
 
@@ -321,78 +296,65 @@
 
 
         /* =====================================================
-           FLOATING BUBBLE HEADER
+           FORMAL PROFESSIONAL HEADER
         ====================================================== */
 
         .site-navbar {
             position: fixed;
 
-            top: 18px;
+            top: 0;
             left: 0;
 
             width: 100%;
 
             z-index: 9999;
 
-            background: transparent;
+            background:
+                rgba(255,255,255,.97);
 
-            pointer-events: none;
+            border-bottom:
+                1px solid rgba(23,54,93,.07);
+
+            box-shadow:
+                0 3px 18px rgba(16,24,38,.05);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            pointer-events: auto;
+
+            transition:
+                box-shadow .3s ease,
+                background .3s ease;
         }
 
-        .nav-bubble {
-            width:
-                min(
-                    calc(100% - 34px),
-                    1160px
-                );
+        .site-navbar.scrolled {
+            background:
+                rgba(255,255,255,.99);
 
-            min-height: 68px;
+            box-shadow:
+                0 5px 20px rgba(16,24,38,.08);
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+
+            min-height: 76px;
 
             margin: 0 auto;
 
-            padding:
-                8px
-                10px;
+            padding: 0 20px;
 
             display: flex;
             align-items: center;
-
-            background:
-                rgba(255,255,255,.94);
-
-            border:
-                1px solid rgba(23,54,93,.08);
-
-            border-radius: 50px;
-
-            box-shadow:
-                0 12px 35px rgba(15,41,72,.11);
-
-            backdrop-filter:
-                blur(18px);
-
-            -webkit-backdrop-filter:
-                blur(18px);
-
-            transition:
-                min-height .35s var(--ease),
-                box-shadow .35s var(--ease);
-
-            pointer-events: auto;
-        }
-
-        .site-navbar.scrolled .nav-bubble {
-            min-height: 58px;
-
-            box-shadow:
-                0 10px 28px rgba(15,41,72,.14);
         }
 
         .brand {
             display: flex;
             align-items: center;
 
-            gap: 10px;
+            gap: 11px;
 
             min-width: 0;
 
@@ -406,19 +368,19 @@
         .brand-logo {
             flex-shrink: 0;
 
-            width: 44px;
-            height: 44px;
+            width: 45px;
+            height: 45px;
 
             object-fit: cover;
 
-            border-radius: 50%;
+            border-radius: 8px;
 
             transition:
-                transform .4s var(--ease);
+                transform .35s var(--ease);
         }
 
         .site-navbar.scrolled .brand-logo {
-            transform: scale(.92);
+            transform: scale(.94);
         }
 
         .brand-text {
@@ -432,7 +394,7 @@
 
             font-family: "Montserrat", sans-serif;
 
-            font-size: .92rem;
+            font-size: .95rem;
             font-weight: 800;
 
             line-height: 1;
@@ -441,19 +403,16 @@
         .brand-text span {
             display: block;
 
-            max-width: 200px;
-
             margin-top: 4px;
 
-            color: #7a828c;
+            color: #737b84;
 
-            font-size: .48rem;
+            font-size: .50rem;
+            font-weight: 500;
+
+            line-height: 1.2;
 
             white-space: nowrap;
-
-            overflow: hidden;
-
-            text-overflow: ellipsis;
         }
 
         .navbar-nav {
@@ -461,23 +420,18 @@
         }
 
         .navbar-nav .nav-link {
-            padding:
-                8px
-                11px !important;
+            padding: 9px 11px !important;
 
-            color: #4c5560 !important;
+            color: #4d5661 !important;
 
             font-family: "Montserrat", sans-serif;
 
-            font-size: .66rem;
-
+            font-size: .68rem;
             font-weight: 700;
 
             letter-spacing: .45px;
 
             text-transform: uppercase;
-
-            border-radius: 50px;
 
             transition:
                 color .25s ease,
@@ -485,10 +439,12 @@
         }
 
         .navbar-nav .nav-link:hover {
-            background:
-                rgba(23,54,93,.06);
-
             color: var(--primary) !important;
+
+            background:
+                var(--primary-soft);
+
+            border-radius: 5px;
         }
 
         .nav-whatsapp {
@@ -500,41 +456,29 @@
 
             min-height: 40px;
 
-            margin-left: 7px;
+            margin-left: 8px;
 
-            padding:
-                9px
-                16px;
+            padding: 9px 16px;
 
-            background:
-                var(--primary);
+            background: var(--primary);
+            color: var(--white);
 
-            color:
-                var(--white);
+            border-radius: 5px;
 
-            border-radius:
-                50px;
-
-            font-size:
-                .64rem;
-
-            font-weight:
-                700;
+            font-size: .65rem;
+            font-weight: 700;
 
             transition:
-                transform .25s var(--ease),
-                background .25s ease;
+                background .25s ease,
+                transform .25s ease;
         }
 
         .nav-whatsapp:hover {
-            background:
-                var(--primary-dark);
+            background: var(--primary-dark);
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            transform:
-                translateY(-1px);
+            transform: translateY(-1px);
         }
 
         .navbar-toggler {
@@ -548,9 +492,9 @@
             padding: 0;
 
             border:
-                1px solid rgba(23,54,93,.13) !important;
+                1px solid rgba(23,54,93,.12) !important;
 
-            border-radius: 50% !important;
+            border-radius: 6px !important;
 
             box-shadow: none !important;
         }
@@ -570,8 +514,7 @@
 
             isolation: isolate;
 
-            background:
-                #0d233d;
+            background: #0d233d;
         }
 
         .hero-bg {
@@ -586,8 +529,7 @@
                 center center /
                 cover no-repeat;
 
-            transform:
-                scale(1.045);
+            transform: scale(1.045);
 
             will-change: transform;
 
@@ -649,8 +591,7 @@
                     transparent 70%
                 );
 
-            filter:
-                blur(10px);
+            filter: blur(10px);
 
             animation:
                 glowFloat
@@ -681,7 +622,7 @@
 
             z-index: 3;
 
-            padding-top: 85px;
+            padding-top: 120px;
         }
 
         .hero-content {
@@ -700,11 +641,7 @@
             font-family: "Montserrat", sans-serif;
 
             font-size:
-                clamp(
-                    3rem,
-                    6vw,
-                    6rem
-                );
+                clamp(3rem, 6vw, 6rem);
 
             font-weight: 800;
 
@@ -756,16 +693,13 @@
 
             gap: 8px;
 
-            padding:
-                12px
-                23px;
+            padding: 12px 23px;
 
             border-radius: 5px;
 
             font-family: "Montserrat", sans-serif;
 
             font-size: .68rem;
-
             font-weight: 800;
 
             letter-spacing: .6px;
@@ -779,11 +713,8 @@
         }
 
         .btn-main {
-            background:
-                var(--accent);
-
-            color:
-                #111;
+            background: var(--accent);
+            color: #111;
 
             border: none;
 
@@ -792,21 +723,17 @@
         }
 
         .btn-main:hover {
-            background:
-                #ffd247;
-
+            background: #ffd247;
             color: #111;
 
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
 
             box-shadow:
                 0 12px 28px rgba(245,184,0,.24);
         }
 
         .btn-ghost {
-            color:
-                var(--white);
+            color: var(--white);
 
             background:
                 rgba(255,255,255,.08);
@@ -814,19 +741,15 @@
             border:
                 1px solid rgba(255,255,255,.55);
 
-            backdrop-filter:
-                blur(5px);
+            backdrop-filter: blur(5px);
         }
 
         .btn-ghost:hover {
-            background:
-                var(--white);
+            background: var(--white);
 
-            color:
-                var(--primary);
+            color: var(--primary);
 
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
         }
 
         .hero-features {
@@ -846,19 +769,16 @@
         }
 
         .hero-feature i {
-            color:
-                var(--accent);
+            color: var(--accent);
 
-            font-size:
-                .9rem;
+            font-size: .9rem;
         }
 
         .hero-feature span {
             color:
                 rgba(255,255,255,.80);
 
-            font-size:
-                .65rem;
+            font-size: .65rem;
         }
 
 
@@ -871,8 +791,7 @@
 
             z-index: 30;
 
-            margin-top:
-                -66px;
+            margin-top: -66px;
         }
 
         .contact-float {
@@ -888,9 +807,7 @@
 
             gap: 22px;
 
-            padding:
-                23px
-                27px;
+            padding: 23px 27px;
 
             background:
                 rgba(255,255,255,.97);
@@ -898,111 +815,71 @@
             border:
                 1px solid rgba(23,54,93,.07);
 
-            border-radius:
-                12px;
+            border-radius: 12px;
 
-            box-shadow:
-                var(--shadow-lg);
+            box-shadow: var(--shadow-lg);
 
-            backdrop-filter:
-                blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         .contact-float-title {
-            color:
-                var(--primary);
+            color: var(--primary);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .98rem;
-
-            font-weight:
-                800;
+            font-size: .98rem;
+            font-weight: 800;
         }
 
         .contact-float-desc {
             margin-top: 4px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            font-size:
-                .66rem;
+            font-size: .66rem;
         }
 
         .contact-float-label {
             margin-bottom: 4px;
 
-            color:
-                #9ba3ad;
+            color: #9ba3ad;
 
-            font-size:
-                .54rem;
+            font-size: .54rem;
+            font-weight: 800;
 
-            font-weight:
-                800;
-
-            letter-spacing:
-                1px;
-
-            text-transform:
-                uppercase;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .contact-float-value {
-            color:
-                var(--text);
+            color: var(--text);
 
-            font-size:
-                .72rem;
+            font-size: .72rem;
+            font-weight: 600;
 
-            font-weight:
-                600;
-
-            overflow-wrap:
-                anywhere;
+            overflow-wrap: anywhere;
         }
 
         .contact-float-btn {
-            min-height:
-                43px;
+            min-height: 43px;
 
-            display:
-                inline-flex;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:
-                center;
+            gap: 7px;
 
-            justify-content:
-                center;
+            padding: 10px 17px;
 
-            gap:
-                7px;
+            background: var(--whatsapp);
+            color: var(--white);
 
-            padding:
-                10px
-                17px;
+            border-radius: 5px;
 
-            background:
-                var(--whatsapp);
+            font-size: .65rem;
+            font-weight: 700;
 
-            color:
-                var(--white);
-
-            border-radius:
-                5px;
-
-            font-size:
-                .65rem;
-
-            font-weight:
-                700;
-
-            white-space:
-                nowrap;
+            white-space: nowrap;
 
             transition:
                 transform .25s var(--ease),
@@ -1010,48 +887,36 @@
         }
 
         .contact-float-btn:hover {
-            background:
-                var(--whatsapp-dark);
+            background: var(--whatsapp-dark);
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
 
         /* =====================================================
-           SERVICES - NO IMAGE
+           SERVICES
         ====================================================== */
 
         .services-section {
-            background:
-                var(--white);
+            background: var(--white);
         }
 
         .service-card {
-            position:
-                relative;
+            position: relative;
 
-            height:
-                100%;
+            height: 100%;
 
-            padding:
-                29px
-                27px;
+            padding: 29px 27px;
 
-            overflow:
-                hidden;
+            overflow: hidden;
 
-            background:
-                var(--white);
+            background: var(--white);
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                14px;
+            border-radius: 14px;
 
             transition:
                 transform .45s var(--ease),
@@ -1060,106 +925,69 @@
         }
 
         .service-card::before {
-            content:
-                "";
+            content: "";
 
-            position:
-                absolute;
+            position: absolute;
 
-            top:
-                0;
+            top: 0;
+            left: 0;
 
-            left:
-                0;
+            width: 0;
+            height: 3px;
 
-            width:
-                0;
-
-            height:
-                3px;
-
-            background:
-                var(--accent);
+            background: var(--accent);
 
             transition:
                 width .45s var(--ease);
         }
 
         .service-card:hover {
-            transform:
-                translateY(-8px);
+            transform: translateY(-8px);
 
             border-color:
                 rgba(23,54,93,.12);
 
-            box-shadow:
-                var(--shadow-md);
+            box-shadow: var(--shadow-md);
         }
 
         .service-card:hover::before {
-            width:
-                100%;
+            width: 100%;
         }
 
         .service-top {
-            display:
-                flex;
+            display: flex;
 
-            align-items:
-                center;
+            align-items: center;
+            justify-content: space-between;
 
-            justify-content:
-                space-between;
-
-            margin-bottom:
-                22px;
+            margin-bottom: 22px;
         }
 
         .service-index {
-            color:
-                var(--accent-dark);
+            color: var(--accent-dark);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .61rem;
+            font-size: .61rem;
+            font-weight: 800;
 
-            font-weight:
-                800;
-
-            letter-spacing:
-                1.8px;
+            letter-spacing: 1.8px;
         }
 
         .service-icon {
-            width:
-                52px;
+            width: 52px;
+            height: 52px;
 
-            height:
-                52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            display:
-                flex;
+            background: var(--primary-soft);
+            color: var(--primary);
 
-            align-items:
-                center;
+            border-radius: 12px;
 
-            justify-content:
-                center;
-
-            background:
-                var(--primary-soft);
-
-            color:
-                var(--primary);
-
-            border-radius:
-                12px;
-
-            font-size:
-                22px;
+            font-size: 22px;
 
             transition:
                 transform .45s var(--ease),
@@ -1172,69 +1000,45 @@
                 translateY(-4px)
                 rotate(-4deg);
 
-            background:
-                var(--primary);
+            background: var(--primary);
 
-            color:
-                var(--white);
+            color: var(--white);
         }
 
         .service-title {
-            margin-bottom:
-                10px;
+            margin-bottom: 10px;
 
-            color:
-                var(--primary);
+            color: var(--primary);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .98rem;
-
-            font-weight:
-                800;
+            font-size: .98rem;
+            font-weight: 800;
         }
 
         .service-text {
-            margin:
-                0;
+            margin: 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            font-size:
-                .74rem;
+            font-size: .74rem;
+            line-height: 1.8;
 
-            line-height:
-                1.8;
-
-            overflow-wrap:
-                anywhere;
+            overflow-wrap: anywhere;
         }
 
         .service-arrow {
-            display:
-                inline-flex;
+            display: inline-flex;
+            align-items: center;
 
-            align-items:
-                center;
+            gap: 6px;
 
-            gap:
-                6px;
+            margin-top: 20px;
 
-            margin-top:
-                20px;
+            color: var(--primary);
 
-            color:
-                var(--primary);
-
-            font-size:
-                .64rem;
-
-            font-weight:
-                700;
+            font-size: .64rem;
+            font-weight: 700;
 
             transition:
                 gap .3s var(--ease),
@@ -1242,11 +1046,9 @@
         }
 
         .service-card:hover .service-arrow {
-            gap:
-                10px;
+            gap: 10px;
 
-            color:
-                var(--accent-dark);
+            color: var(--accent-dark);
         }
 
 
@@ -1255,64 +1057,46 @@
         ====================================================== */
 
         .about-section {
-            background:
-                var(--soft);
+            background: var(--soft);
         }
 
         .about-media {
-            position:
-                relative;
+            position: relative;
 
-            height:
-                560px;
+            height: 560px;
 
-            overflow:
-                hidden;
+            overflow: hidden;
 
-            border-radius:
-                10px;
+            border-radius: 10px;
 
-            background:
-                var(--primary);
+            background: var(--primary);
 
-            box-shadow:
-                var(--shadow-sm);
+            box-shadow: var(--shadow-sm);
         }
 
         .about-media img {
-            width:
-                100%;
+            width: 100%;
+            height: 100%;
 
-            height:
-                100%;
-
-            object-fit:
-                cover;
+            object-fit: cover;
 
             transition:
                 transform 1s var(--ease);
         }
 
         .about-media:hover img {
-            transform:
-                scale(1.025);
+            transform: scale(1.025);
         }
 
         .about-media-overlay {
-            position:
-                absolute;
+            position: absolute;
 
-            inset:
-                0;
+            inset: 0;
 
-            display:
-                flex;
+            display: flex;
+            align-items: flex-end;
 
-            align-items:
-                flex-end;
-
-            padding:
-                28px;
+            padding: 28px;
 
             background:
                 linear-gradient(
@@ -1322,102 +1106,67 @@
         }
 
         .about-media-title {
-            margin-bottom:
-                5px;
+            margin-bottom: 5px;
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                1.1rem;
-
-            font-weight:
-                800;
+            font-size: 1.1rem;
+            font-weight: 800;
         }
 
         .about-media-text {
-            margin:
-                0;
+            margin: 0;
 
-            color:
-                rgba(255,255,255,.75);
+            color: rgba(255,255,255,.75);
 
-            font-size:
-                .68rem;
+            font-size: .68rem;
         }
 
         .about-content {
-            padding-left:
-                30px;
+            padding-left: 30px;
         }
 
         .about-content p {
-            margin-bottom:
-                16px;
+            margin-bottom: 16px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            font-size:
-                .80rem;
+            font-size: .80rem;
+            line-height: 1.9;
 
-            line-height:
-                1.9;
-
-            overflow-wrap:
-                anywhere;
+            overflow-wrap: anywhere;
         }
 
         .about-points {
-            margin-top:
-                26px;
+            margin-top: 26px;
         }
 
         .about-point {
-            display:
-                flex;
+            display: flex;
+            align-items: flex-start;
 
-            align-items:
-                flex-start;
+            gap: 12px;
 
-            gap:
-                12px;
-
-            margin-bottom:
-                17px;
+            margin-bottom: 17px;
         }
 
         .about-icon {
-            flex-shrink:
-                0;
+            flex-shrink: 0;
 
-            width:
-                41px;
+            width: 41px;
+            height: 41px;
 
-            height:
-                41px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            display:
-                flex;
+            background: var(--white);
 
-            align-items:
-                center;
+            border-radius: 8px;
 
-            justify-content:
-                center;
-
-            background:
-                var(--white);
-
-            border-radius:
-                8px;
-
-            color:
-                var(--primary);
+            color: var(--primary);
 
             box-shadow:
                 0 6px 16px rgba(0,0,0,.05);
@@ -1433,62 +1182,44 @@
         }
 
         .about-point h5 {
-            margin-bottom:
-                3px;
+            margin-bottom: 3px;
 
-            color:
-                var(--primary);
+            color: var(--primary);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .76rem;
-
-            font-weight:
-                800;
+            font-size: .76rem;
+            font-weight: 800;
         }
 
         .about-point p {
-            margin:
-                0;
+            margin: 0;
 
-            font-size:
-                .66rem;
-
-            line-height:
-                1.65;
+            font-size: .66rem;
+            line-height: 1.65;
         }
 
 
         /* =====================================================
-           PROJECT GALLERY
+           GALLERY
         ====================================================== */
 
         .projects-section {
-            background:
-                var(--white);
+            background: var(--white);
         }
 
         .project-card {
-            position:
-                relative;
+            position: relative;
 
-            height:
-                365px;
+            height: 365px;
 
-            overflow:
-                hidden;
+            overflow: hidden;
 
-            background:
-                #dce4e9;
+            background: #dce4e9;
 
-            border-radius:
-                7px;
+            border-radius: 7px;
 
-            box-shadow:
-                var(--shadow-sm);
+            box-shadow: var(--shadow-sm);
 
             transition:
                 transform .45s var(--ease),
@@ -1496,38 +1227,29 @@
         }
 
         .project-card:hover {
-            transform:
-                translateY(-5px);
+            transform: translateY(-5px);
 
-            box-shadow:
-                var(--shadow-md);
+            box-shadow: var(--shadow-md);
         }
 
         .project-card img {
-            width:
-                100%;
+            width: 100%;
+            height: 100%;
 
-            height:
-                100%;
-
-            object-fit:
-                cover;
+            object-fit: cover;
 
             transition:
                 transform .8s var(--ease);
         }
 
         .project-card:hover img {
-            transform:
-                scale(1.06);
+            transform: scale(1.06);
         }
 
         .project-shade {
-            position:
-                absolute;
+            position: absolute;
 
-            inset:
-                0;
+            inset: 0;
 
             background:
                 linear-gradient(
@@ -1537,70 +1259,46 @@
         }
 
         .project-content {
-            position:
-                absolute;
+            position: absolute;
 
-            right:
-                0;
+            right: 0;
+            bottom: 0;
+            left: 0;
 
-            bottom:
-                0;
-
-            left:
-                0;
-
-            padding:
-                23px;
+            padding: 23px;
         }
 
         .project-number {
-            display:
-                block;
+            display: block;
 
-            margin-bottom:
-                5px;
+            margin-bottom: 5px;
 
-            color:
-                var(--accent);
+            color: var(--accent);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .56rem;
+            font-size: .56rem;
+            font-weight: 800;
 
-            font-weight:
-                800;
-
-            letter-spacing:
-                1.5px;
+            letter-spacing: 1.5px;
         }
 
         .project-title {
-            margin-bottom:
-                4px;
+            margin-bottom: 4px;
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .88rem;
-
-            font-weight:
-                800;
+            font-size: .88rem;
+            font-weight: 800;
         }
 
         .project-caption {
             color:
                 rgba(255,255,255,.70);
 
-            font-size:
-                .60rem;
+            font-size: .60rem;
         }
 
 
@@ -1618,12 +1316,9 @@
         }
 
         .area-item {
-            height:
-                100%;
+            height: 100%;
 
-            padding:
-                22px
-                16px;
+            padding: 22px 16px;
 
             background:
                 rgba(255,255,255,.045);
@@ -1631,8 +1326,7 @@
             border:
                 1px solid rgba(255,255,255,.09);
 
-            border-radius:
-                8px;
+            border-radius: 8px;
 
             transition:
                 transform .35s var(--ease),
@@ -1640,48 +1334,36 @@
         }
 
         .area-item:hover {
-            transform:
-                translateY(-5px);
+            transform: translateY(-5px);
 
             background:
                 rgba(255,255,255,.075);
         }
 
         .area-icon {
-            margin-bottom:
-                11px;
+            margin-bottom: 11px;
 
-            color:
-                var(--accent);
+            color: var(--accent);
 
-            font-size:
-                20px;
+            font-size: 20px;
         }
 
         .area-name {
-            margin-bottom:
-                4px;
+            margin-bottom: 4px;
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .72rem;
-
-            font-weight:
-                800;
+            font-size: .72rem;
+            font-weight: 800;
         }
 
         .area-caption {
             color:
                 rgba(255,255,255,.53);
 
-            font-size:
-                .58rem;
+            font-size: .58rem;
         }
 
 
@@ -1690,25 +1372,20 @@
         ====================================================== */
 
         .testimonial-section {
-            background:
-                var(--soft);
+            background: var(--soft);
         }
 
         .testimonial-card {
-            height:
-                100%;
+            height: 100%;
 
-            padding:
-                27px;
+            padding: 27px;
 
-            background:
-                var(--white);
+            background: var(--white);
 
             border:
                 1px solid var(--border);
 
-            border-radius:
-                9px;
+            border-radius: 9px;
 
             transition:
                 transform .35s var(--ease),
@@ -1716,145 +1393,93 @@
         }
 
         .testimonial-card:hover {
-            transform:
-                translateY(-5px);
+            transform: translateY(-5px);
 
-            box-shadow:
-                var(--shadow-sm);
+            box-shadow: var(--shadow-sm);
         }
 
         .demo-label {
-            display:
-                inline-block;
+            display: inline-block;
 
-            margin-bottom:
-                13px;
+            margin-bottom: 13px;
 
-            padding:
-                4px
-                8px;
+            padding: 4px 8px;
 
-            background:
-                var(--accent-soft);
+            background: var(--accent-soft);
 
-            color:
-                #8f6d00;
+            color: #8f6d00;
 
-            border-radius:
-                50px;
+            border-radius: 50px;
 
-            font-size:
-                .50rem;
+            font-size: .50rem;
+            font-weight: 700;
 
-            font-weight:
-                700;
-
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
         .testimonial-stars {
-            margin-bottom:
-                14px;
+            margin-bottom: 14px;
 
-            color:
-                var(--accent);
+            color: var(--accent);
 
-            font-size:
-                12px;
+            font-size: 12px;
         }
 
         .testimonial-quote {
-            margin-bottom:
-                20px;
+            margin-bottom: 20px;
 
-            color:
-                #5b646f;
+            color: #5b646f;
 
-            font-size:
-                .73rem;
+            font-size: .73rem;
+            line-height: 1.85;
 
-            line-height:
-                1.85;
-
-            font-style:
-                italic;
+            font-style: italic;
         }
 
         .testimonial-author {
-            display:
-                flex;
+            display: flex;
+            align-items: center;
 
-            align-items:
-                center;
-
-            gap:
-                10px;
+            gap: 10px;
         }
 
         .testimonial-avatar {
-            width:
-                39px;
+            width: 39px;
+            height: 39px;
 
-            height:
-                39px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            display:
-                flex;
+            background: var(--primary);
 
-            align-items:
-                center;
+            border-radius: 50%;
 
-            justify-content:
-                center;
+            color: var(--white);
 
-            background:
-                var(--primary);
+            font-family: "Montserrat", sans-serif;
 
-            border-radius:
-                50%;
-
-            color:
-                var(--white);
-
-            font-family:
-                "Montserrat",
-                sans-serif;
-
-            font-size:
-                .66rem;
-
-            font-weight:
-                800;
+            font-size: .66rem;
+            font-weight: 800;
         }
 
         .testimonial-name {
-            display:
-                block;
+            display: block;
 
-            color:
-                var(--primary);
+            color: var(--primary);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .70rem;
-
-            font-weight:
-                800;
+            font-size: .70rem;
+            font-weight: 800;
         }
 
         .testimonial-location {
-            display:
-                block;
+            display: block;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            font-size:
-                .60rem;
+            font-size: .60rem;
         }
 
 
@@ -1863,152 +1488,98 @@
         ====================================================== */
 
         .contact-section {
-            background:
-                var(--white);
+            background: var(--white);
         }
 
         .contact-panel {
-            height:
-                100%;
+            height: 100%;
 
-            padding:
-                32px;
+            padding: 32px;
 
-            background:
-                var(--soft);
+            background: var(--soft);
 
-            border-radius:
-                9px;
+            border-radius: 9px;
         }
 
         .contact-row {
-            display:
-                flex;
+            display: flex;
+            align-items: flex-start;
 
-            align-items:
-                flex-start;
+            gap: 12px;
 
-            gap:
-                12px;
+            margin-bottom: 20px;
 
-            margin-bottom:
-                20px;
-
-            min-width:
-                0;
+            min-width: 0;
         }
 
         .contact-icon {
-            flex-shrink:
-                0;
+            flex-shrink: 0;
 
-            width:
-                42px;
+            width: 42px;
+            height: 42px;
 
-            height:
-                42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            display:
-                flex;
+            background: var(--white);
 
-            align-items:
-                center;
+            border-radius: 8px;
 
-            justify-content:
-                center;
-
-            background:
-                var(--white);
-
-            border-radius:
-                8px;
-
-            color:
-                var(--primary);
+            color: var(--primary);
 
             box-shadow:
                 0 5px 15px rgba(0,0,0,.05);
         }
 
         .contact-content {
-            min-width:
-                0;
+            min-width: 0;
 
-            flex:
-                1;
+            flex: 1;
         }
 
         .contact-label {
-            margin-bottom:
-                3px;
+            margin-bottom: 3px;
 
-            color:
-                var(--primary);
+            color: var(--primary);
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
-            font-size:
-                .64rem;
+            font-size: .64rem;
+            font-weight: 800;
 
-            font-weight:
-                800;
-
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
         .contact-value {
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            font-size:
-                .69rem;
+            font-size: .69rem;
+            line-height: 1.7;
 
-            line-height:
-                1.7;
-
-            overflow-wrap:
-                anywhere;
-
-            word-break:
-                break-word;
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
         .contact-button {
-            width:
-                100%;
+            width: 100%;
 
-            min-height:
-                46px;
+            min-height: 46px;
 
-            display:
-                inline-flex;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:
-                center;
+            gap: 7px;
 
-            justify-content:
-                center;
+            background: var(--whatsapp);
 
-            gap:
-                7px;
+            color: var(--white);
 
-            background:
-                var(--whatsapp);
+            border-radius: 5px;
 
-            color:
-                var(--white);
-
-            border-radius:
-                5px;
-
-            font-size:
-                .67rem;
-
-            font-weight:
-                700;
+            font-size: .67rem;
+            font-weight: 700;
 
             transition:
                 transform .25s var(--ease),
@@ -2016,51 +1587,35 @@
         }
 
         .contact-button:hover {
-            background:
-                var(--whatsapp-dark);
+            background: var(--whatsapp-dark);
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
         .map-box {
-            width:
-                100%;
+            width: 100%;
+            height: 100%;
 
-            height:
-                100%;
+            min-height: 500px;
 
-            min-height:
-                500px;
+            overflow: hidden;
 
-            overflow:
-                hidden;
+            border-radius: 9px;
 
-            border-radius:
-                9px;
-
-            box-shadow:
-                var(--shadow-sm);
+            box-shadow: var(--shadow-sm);
         }
 
         .map-box iframe {
-            width:
-                100%;
+            width: 100%;
+            height: 100%;
 
-            height:
-                100%;
+            min-height: 500px;
 
-            min-height:
-                500px;
+            display: block;
 
-            display:
-                block;
-
-            border:
-                0;
+            border: 0;
         }
 
 
@@ -2069,9 +1624,7 @@
         ====================================================== */
 
         .cta-section {
-            padding:
-                76px
-                0;
+            padding: 76px 0;
 
             background:
                 linear-gradient(
@@ -2082,20 +1635,15 @@
         }
 
         .cta-box {
-            text-align:
-                center;
+            text-align: center;
         }
 
         .cta-box h2 {
-            margin-bottom:
-                10px;
+            margin-bottom: 10px;
 
-            color:
-                #111;
+            color: #111;
 
-            font-family:
-                "Montserrat",
-                sans-serif;
+            font-family: "Montserrat", sans-serif;
 
             font-size:
                 clamp(
@@ -2104,61 +1652,40 @@
                     3rem
                 );
 
-            font-weight:
-                800;
+            font-weight: 800;
         }
 
         .cta-box p {
-            margin-bottom:
-                22px;
+            margin-bottom: 22px;
 
-            color:
-                #343434;
+            color: #343434;
 
-            font-size:
-                .78rem;
+            font-size: .78rem;
         }
 
         .cta-button {
-            display:
-                inline-flex;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:
-                center;
+            gap: 8px;
 
-            justify-content:
-                center;
+            min-height: 48px;
 
-            gap:
-                8px;
+            padding: 12px 24px;
 
-            min-height:
-                48px;
+            background: var(--dark);
 
-            padding:
-                12px
-                24px;
+            color: var(--white);
 
-            background:
-                var(--dark);
+            border-radius: 5px;
 
-            color:
-                var(--white);
+            font-size: .67rem;
+            font-weight: 700;
 
-            border-radius:
-                5px;
+            letter-spacing: .5px;
 
-            font-size:
-                .67rem;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                .5px;
-
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
 
             transition:
                 transform .25s var(--ease),
@@ -2166,14 +1693,11 @@
         }
 
         .cta-button:hover {
-            background:
-                #000;
+            background: #000;
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
 
             box-shadow:
                 0 10px 26px rgba(0,0,0,.15);
@@ -2497,17 +2021,13 @@
 
         @media (max-width: 991px) {
 
-            .site-navbar {
-                top:
-                    12px;
-            }
-
-            .nav-bubble {
-                width:
-                    calc(100% - 24px);
-
+            .nav-container {
                 min-height:
-                    63px;
+                    68px;
+
+                padding:
+                    0
+                    16px;
             }
 
             .brand-logo {
@@ -2538,13 +2058,16 @@
                     12px;
 
                 background:
-                    rgba(255,255,255,.98);
+                    rgba(255,255,255,.99);
+
+                border:
+                    1px solid var(--border);
 
                 border-radius:
-                    24px;
+                    10px;
 
                 box-shadow:
-                    0 12px 30px rgba(0,0,0,.10);
+                    0 10px 25px rgba(16,24,38,.08);
             }
 
             .navbar-nav .nav-link {
@@ -2573,7 +2096,7 @@
 
             .hero-inner {
                 padding-top:
-                    98px;
+                    105px;
             }
 
             .contact-float-wrap {
@@ -2667,59 +2190,48 @@
             }
 
 
-            /* -----------------------------------------------
-               HEADER
-            ------------------------------------------------ */
+            /* HEADER */
 
-            .site-navbar {
-                top:
-                    9px;
-            }
-
-            .nav-bubble {
-                width:
-                    calc(100% - 20px);
-
+            .nav-container {
                 min-height:
-                    59px;
+                    64px;
 
-                border-radius:
-                    34px;
+                padding:
+                    0
+                    14px;
             }
 
             .brand-logo {
                 width:
-                    39px;
+                    40px;
 
                 height:
-                    39px;
+                    40px;
             }
 
             .brand-text strong {
                 font-size:
-                    .80rem;
+                    .82rem;
             }
 
             .brand-text span {
                 max-width:
-                    145px;
+                    160px;
 
                 font-size:
-                    .42rem;
+                    .43rem;
             }
 
             .navbar-toggler {
                 width:
-                    39px;
+                    40px;
 
                 height:
-                    39px;
+                    40px;
             }
 
 
-            /* -----------------------------------------------
-               HERO
-            ------------------------------------------------ */
+            /* HERO */
 
             .hero {
                 min-height:
@@ -2770,7 +2282,7 @@
 
             .hero-inner {
                 padding-top:
-                    132px;
+                    120px;
             }
 
             .hero-label {
@@ -2850,9 +2362,7 @@
             }
 
 
-            /* -----------------------------------------------
-               CONTACT FLOAT
-            ------------------------------------------------ */
+            /* FLOAT CONTACT */
 
             .contact-float-wrap {
                 margin-top:
@@ -2911,9 +2421,7 @@
             }
 
 
-            /* -----------------------------------------------
-               SERVICE
-            ------------------------------------------------ */
+            /* SERVICE */
 
             .service-card {
                 padding:
@@ -2948,9 +2456,7 @@
             }
 
 
-            /* -----------------------------------------------
-               ABOUT
-            ------------------------------------------------ */
+            /* ABOUT */
 
             .about-media {
                 height:
@@ -2978,9 +2484,7 @@
             }
 
 
-            /* -----------------------------------------------
-               PROJECT
-            ------------------------------------------------ */
+            /* GALLERY */
 
             .project-card {
                 height:
@@ -3003,9 +2507,7 @@
             }
 
 
-            /* -----------------------------------------------
-               AREA
-            ------------------------------------------------ */
+            /* AREA */
 
             .area-item {
                 padding:
@@ -3024,9 +2526,7 @@
             }
 
 
-            /* -----------------------------------------------
-               TESTIMONIAL
-            ------------------------------------------------ */
+            /* TESTIMONIAL */
 
             .testimonial-card {
                 padding:
@@ -3039,9 +2539,7 @@
             }
 
 
-            /* -----------------------------------------------
-               CONTACT
-            ------------------------------------------------ */
+            /* CONTACT */
 
             .contact-panel {
                 padding:
@@ -3068,9 +2566,7 @@
             }
 
 
-            /* -----------------------------------------------
-               CTA
-            ------------------------------------------------ */
+            /* CTA */
 
             .cta-section {
                 padding:
@@ -3100,9 +2596,7 @@
             }
 
 
-            /* -----------------------------------------------
-               FOOTER
-            ------------------------------------------------ */
+            /* FOOTER */
 
             .footer {
                 padding:
@@ -3204,9 +2698,7 @@
             }
 
 
-            /* -----------------------------------------------
-               FLOATING WHATSAPP
-            ------------------------------------------------ */
+            /* WHATSAPP */
 
             .floating-whatsapp {
                 right:
@@ -3229,7 +2721,7 @@
 
 
         /* =====================================================
-           VERY SMALL
+           SMALL PHONE
         ====================================================== */
 
         @media (max-width: 390px) {
@@ -3241,7 +2733,7 @@
 
             .hero-inner {
                 padding-top:
-                    127px;
+                    116px;
             }
 
             .hero-title {
@@ -3262,6 +2754,20 @@
             .brand-text span {
                 max-width:
                     132px;
+            }
+
+        }
+
+
+        /* =====================================================
+           EXTRA SMALL
+        ====================================================== */
+
+        @media (max-width: 360px) {
+
+            .brand-text span {
+                display:
+                    none;
             }
 
         }
@@ -3302,7 +2808,7 @@
 
 
     <!-- =====================================================
-         FLOATING BUBBLE HEADER
+         FORMAL HEADER
     ====================================================== -->
 
     <nav
@@ -3310,150 +2816,146 @@
         id="siteNavbar"
     >
 
-        <div class="container">
-
-            <div class="nav-bubble">
+        <div class="nav-container">
 
 
-                <!-- BRAND -->
+            <!-- BRAND -->
 
-                <a
-                    href="#beranda"
-                    class="brand"
+            <a
+                href="#beranda"
+                class="brand"
+            >
+
+                <img
+                    src="assets/logo.jpg"
+                    alt="Logo SCE"
+                    class="brand-logo"
                 >
 
-                    <img
-                        src="assets/logo.jpg"
-                        alt="Logo SCE"
-                        class="brand-logo"
-                    >
+                <div class="brand-text">
 
-                    <div class="brand-text">
+                    <strong>
+                        SCE
+                    </strong>
 
-                        <strong>
-                            SCE
-                        </strong>
-
-                        <span>
-                            Sentral Computer n Electronic
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-                <!-- MOBILE BUTTON -->
-
-                <button
-                    class="navbar-toggler d-lg-none ms-auto"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mainNavigation"
-                    aria-controls="mainNavigation"
-                    aria-expanded="false"
-                    aria-label="Buka menu"
-                >
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
-
-
-                <!-- NAVIGATION -->
-
-                <div
-                    class="collapse navbar-collapse"
-                    id="mainNavigation"
-                >
-
-                    <ul
-                        class="navbar-nav ms-auto align-items-lg-center"
-                    >
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#beranda"
-                            >
-                                Beranda
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#layanan"
-                            >
-                                Layanan
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#tentang"
-                            >
-                                Tentang
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#galeri"
-                            >
-                                Galeri
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#area"
-                            >
-                                Area
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#testimoni"
-                            >
-                                Testimoni
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#kontak"
-                            >
-                                Kontak
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a
-                                href="https://wa.me/6285100559960?text=Halo%20SCE,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20kelistrikan."
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="nav-whatsapp"
-                            >
-
-                                <i class="bi bi-whatsapp"></i>
-
-                                WhatsApp
-
-                            </a>
-
-                        </li>
-
-                    </ul>
+                    <span>
+                        Sentral Computer n Electronic
+                    </span>
 
                 </div>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="navbar-toggler d-lg-none ms-auto"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Buka menu"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="mainNavigation"
+            >
+
+                <ul
+                    class="navbar-nav ms-auto align-items-lg-center"
+                >
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#beranda"
+                        >
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#layanan"
+                        >
+                            Layanan
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#tentang"
+                        >
+                            Tentang
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#galeri"
+                        >
+                            Galeri
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#area"
+                        >
+                            Area
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#testimoni"
+                        >
+                            Testimoni
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#kontak"
+                        >
+                            Kontak
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            href="https://wa.me/6285100559960?text=Halo%20SCE,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20kelistrikan."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="nav-whatsapp"
+                        >
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            WhatsApp
+
+                        </a>
+
+                    </li>
+
+                </ul>
 
             </div>
 
@@ -3616,9 +3118,7 @@
 
         <div class="container">
 
-            <div
-                class="contact-float reveal"
-            >
+            <div class="contact-float reveal">
 
 
                 <div>
@@ -3727,13 +3227,9 @@
             <div class="row g-4">
 
 
-                <!-- SERVICE 01 -->
-
                 <div class="col-md-6 col-lg-4">
 
-                    <article
-                        class="service-card reveal"
-                    >
+                    <article class="service-card reveal">
 
                         <div class="service-top">
 
@@ -3742,18 +3238,14 @@
                             </span>
 
                             <div class="service-icon">
-
                                 <i class="bi bi-house-gear"></i>
-
                             </div>
 
                         </div>
 
-
                         <h3 class="service-title">
                             Instalasi Listrik Baru
                         </h3>
-
 
                         <p class="service-text">
 
@@ -3762,7 +3254,6 @@
                             dan bangunan baru.
 
                         </p>
-
 
                         <a
                             href="#kontak"
@@ -3779,8 +3270,6 @@
 
                 </div>
 
-
-                <!-- SERVICE 02 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3795,18 +3284,14 @@
                             </span>
 
                             <div class="service-icon">
-
                                 <i class="bi bi-diagram-3"></i>
-
                             </div>
 
                         </div>
 
-
                         <h3 class="service-title">
                             Panel & Distribusi
                         </h3>
-
 
                         <p class="service-text">
 
@@ -3815,7 +3300,6 @@
                             distribusi listrik.
 
                         </p>
-
 
                         <a
                             href="#kontak"
@@ -3832,8 +3316,6 @@
 
                 </div>
 
-
-                <!-- SERVICE 03 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3848,18 +3330,14 @@
                             </span>
 
                             <div class="service-icon">
-
                                 <i class="bi bi-wrench-adjustable"></i>
-
                             </div>
 
                         </div>
 
-
                         <h3 class="service-title">
                             Maintenance
                         </h3>
-
 
                         <p class="service-text">
 
@@ -3869,7 +3347,6 @@
 
                         </p>
 
-
                         <a
                             href="#kontak"
                             class="service-arrow"
@@ -3886,13 +3363,9 @@
                 </div>
 
 
-                <!-- SERVICE 04 -->
-
                 <div class="col-md-6 col-lg-4">
 
-                    <article
-                        class="service-card reveal"
-                    >
+                    <article class="service-card reveal">
 
                         <div class="service-top">
 
@@ -3901,18 +3374,14 @@
                             </span>
 
                             <div class="service-icon">
-
                                 <i class="bi bi-tools"></i>
-
                             </div>
 
                         </div>
 
-
                         <h3 class="service-title">
                             Perbaikan Korsleting
                         </h3>
-
 
                         <p class="service-text">
 
@@ -3922,7 +3391,6 @@
 
                         </p>
 
-
                         <a
                             href="#kontak"
                             class="service-arrow"
@@ -3938,8 +3406,6 @@
 
                 </div>
 
-
-                <!-- SERVICE 05 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3954,18 +3420,14 @@
                             </span>
 
                             <div class="service-icon">
-
                                 <i class="bi bi-lightning-charge"></i>
-
                             </div>
 
                         </div>
 
-
                         <h3 class="service-title">
                             Penangkal Petir
                         </h3>
-
 
                         <p class="service-text">
 
@@ -3973,7 +3435,6 @@
                             sistem penangkal petir.
 
                         </p>
-
 
                         <a
                             href="#kontak"
@@ -3991,8 +3452,6 @@
                 </div>
 
 
-                <!-- SERVICE 06 -->
-
                 <div class="col-md-6 col-lg-4">
 
                     <article
@@ -4006,18 +3465,14 @@
                             </span>
 
                             <div class="service-icon">
-
                                 <i class="bi bi-search"></i>
-
                             </div>
 
                         </div>
 
-
                         <h3 class="service-title">
                             Pemeriksaan Instalasi
                         </h3>
-
 
                         <p class="service-text">
 
@@ -4026,7 +3481,6 @@
                             masalah kelistrikan.
 
                         </p>
-
 
                         <a
                             href="#kontak"
@@ -4078,9 +3532,7 @@
                             loading="lazy"
                         >
 
-                        <div
-                            class="about-media-overlay"
-                        >
+                        <div class="about-media-overlay">
 
                             <div>
 
@@ -4115,7 +3567,6 @@
                             Tentang SCE
                         </span>
 
-
                         <h2 class="section-title">
 
                             Mengenal
@@ -4124,9 +3575,7 @@
 
                         </h2>
 
-
                         <div class="accent-line"></div>
-
 
                         <p>
 
@@ -4135,7 +3584,6 @@
                             teknologi serta kelistrikan.
 
                         </p>
-
 
                         <p>
 
@@ -4153,9 +3601,7 @@
                             <div class="about-point">
 
                                 <div class="about-icon">
-
                                     <i class="bi bi-shield-check"></i>
-
                                 </div>
 
                                 <div>
@@ -4180,9 +3626,7 @@
                             <div class="about-point">
 
                                 <div class="about-icon">
-
                                     <i class="bi bi-person-check"></i>
-
                                 </div>
 
                                 <div>
@@ -4207,9 +3651,7 @@
                             <div class="about-point">
 
                                 <div class="about-icon">
-
                                     <i class="bi bi-chat-dots"></i>
-
                                 </div>
 
                                 <div>
@@ -4246,7 +3688,7 @@
 
 
     <!-- =====================================================
-         PROJECT GALLERY
+         GALLERY
     ====================================================== -->
 
     <section
@@ -4286,8 +3728,6 @@
             <div class="row g-3">
 
 
-                <!-- PROJECT 1 -->
-
                 <div class="col-6 col-lg-4">
 
                     <div class="project-card reveal">
@@ -4320,8 +3760,6 @@
 
                 </div>
 
-
-                <!-- PROJECT 2 -->
 
                 <div class="col-6 col-lg-4">
 
@@ -4358,8 +3796,6 @@
                 </div>
 
 
-                <!-- PROJECT 3 -->
-
                 <div class="col-6 col-lg-4">
 
                     <div
@@ -4395,8 +3831,6 @@
                 </div>
 
 
-                <!-- PROJECT 4 -->
-
                 <div class="col-6 col-lg-4">
 
                     <div class="project-card reveal">
@@ -4429,8 +3863,6 @@
 
                 </div>
 
-
-                <!-- PROJECT 5 -->
 
                 <div class="col-6 col-lg-4">
 
@@ -4466,8 +3898,6 @@
 
                 </div>
 
-
-                <!-- PROJECT 6 -->
 
                 <div class="col-6 col-lg-4">
 
@@ -4542,9 +3972,7 @@
 
                 </h2>
 
-                <div
-                    class="accent-line center"
-                ></div>
+                <div class="accent-line center"></div>
 
                 <p
                     class="section-description center"
@@ -4751,9 +4179,7 @@
 
                 <div class="col-md-4">
 
-                    <div
-                        class="testimonial-card reveal"
-                    >
+                    <div class="testimonial-card reveal">
 
                         <span class="demo-label">
                             Contoh
@@ -4966,17 +4392,13 @@
 
                 <div class="col-lg-5">
 
-                    <div
-                        class="contact-panel reveal"
-                    >
+                    <div class="contact-panel reveal">
 
 
                         <div class="contact-row">
 
                             <div class="contact-icon">
-
                                 <i class="bi bi-geo-alt-fill"></i>
-
                             </div>
 
                             <div class="contact-content">
@@ -5002,9 +4424,7 @@
                         <div class="contact-row">
 
                             <div class="contact-icon">
-
                                 <i class="bi bi-telephone-fill"></i>
-
                             </div>
 
                             <div class="contact-content">
@@ -5025,9 +4445,7 @@
                         <div class="contact-row">
 
                             <div class="contact-icon">
-
                                 <i class="bi bi-envelope-fill"></i>
-
                             </div>
 
                             <div class="contact-content">
@@ -5037,9 +4455,7 @@
                                 </div>
 
                                 <div class="contact-value">
-
                                     sentralcomputernelectronic@gmail.com
-
                                 </div>
 
                             </div>
@@ -5311,7 +4727,7 @@
 
 
     <!-- =====================================================
-         BOOTSTRAP JS
+         BOOTSTRAP JAVASCRIPT
     ====================================================== -->
 
     <script
@@ -5344,7 +4760,7 @@
 
                     if (!navbar) return;
 
-                    if (window.scrollY > 45) {
+                    if (window.scrollY > 40) {
 
                         navbar.classList.add(
                             "scrolled"
@@ -5405,15 +4821,13 @@
                                 (
                                     event.clientX -
                                     rect.left
-                                ) /
-                                rect.width;
+                                ) / rect.width;
 
                             const y =
                                 (
                                     event.clientY -
                                     rect.top
-                                ) /
-                                rect.height;
+                                ) / rect.height;
 
                             const moveX =
                                 (x - 0.5) * -16;
@@ -5448,7 +4862,7 @@
 
 
                 /* =================================================
-                   SCROLL REVEAL
+                   REVEAL ON SCROLL
                 ================================================== */
 
                 const revealElements =
@@ -5523,7 +4937,7 @@
 
 
                 /* =================================================
-                   CLOSE MOBILE MENU
+                   CLOSE MOBILE NAV
                 ================================================== */
 
                 const navigation =
@@ -5556,9 +4970,7 @@
                                             );
 
                                     if (instance) {
-
                                         instance.hide();
-
                                     }
 
                                 }
