@@ -3,6 +3,10 @@
 
 <head>
 
+    <!-- =====================================================
+         META
+    ====================================================== -->
+
     <meta charset="UTF-8">
 
     <meta
@@ -13,6 +17,11 @@
     <meta
         name="description"
         content="SCE - Sentral Computer n Electronic. Solusi instalasi listrik, panel listrik, maintenance, perbaikan kelistrikan, dan layanan teknis di Banjarmasin."
+    >
+
+    <meta
+        name="keywords"
+        content="SCE, Sentral Computer n Electronic, instalasi listrik Banjarmasin, teknisi listrik, panel listrik, maintenance listrik"
     >
 
     <meta
@@ -69,12 +78,12 @@
         ====================================================== */
 
         :root {
-
             --primary: #17365d;
             --primary-dark: #102a49;
             --primary-light: #315b88;
 
             --accent: #f5b800;
+            --accent-dark: #d79f00;
             --accent-soft: #fff5cf;
 
             --dark: #101722;
@@ -88,8 +97,6 @@
             --whatsapp-dark: #1ebe57;
 
             --border: #e6ebef;
-
-            --radius: 18px;
 
             --shadow-sm:
                 0 8px 24px rgba(16, 24, 38, 0.06);
@@ -119,12 +126,14 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 110px;
+            scroll-padding-top: 105px;
         }
 
         body {
             width: 100%;
             min-height: 100vh;
+
+            margin: 0;
 
             background: var(--white);
             color: var(--text);
@@ -149,7 +158,6 @@
         nav {
             width: 100%;
             max-width: 100%;
-
             overflow: hidden;
         }
 
@@ -160,14 +168,14 @@
 
 
         /* =====================================================
-           SCROLL REVEAL
+           REVEAL ANIMATION
         ====================================================== */
 
         .reveal {
             opacity: 0;
 
             transform:
-                translateY(35px);
+                translateY(32px);
 
             transition:
                 opacity .8s var(--ease),
@@ -199,7 +207,7 @@
 
 
         /* =====================================================
-           COMMON
+           GLOBAL
         ====================================================== */
 
         .section {
@@ -313,7 +321,7 @@
 
 
         /* =====================================================
-           NAVBAR
+           FLOATING BUBBLE HEADER
         ====================================================== */
 
         .site-navbar {
@@ -368,8 +376,7 @@
 
             transition:
                 min-height .35s var(--ease),
-                box-shadow .35s var(--ease),
-                transform .35s var(--ease);
+                box-shadow .35s var(--ease);
 
             pointer-events: auto;
         }
@@ -426,7 +433,6 @@
             font-family: "Montserrat", sans-serif;
 
             font-size: .92rem;
-
             font-weight: 800;
 
             line-height: 1;
@@ -503,13 +509,17 @@
             background:
                 var(--primary);
 
-            color: var(--white);
+            color:
+                var(--white);
 
-            border-radius: 50px;
+            border-radius:
+                50px;
 
-            font-size: .64rem;
+            font-size:
+                .64rem;
 
-            font-weight: 700;
+            font-weight:
+                700;
 
             transition:
                 transform .25s var(--ease),
@@ -520,7 +530,8 @@
             background:
                 var(--primary-dark);
 
-            color: var(--white);
+            color:
+                var(--white);
 
             transform:
                 translateY(-1px);
@@ -563,13 +574,10 @@
                 #0d233d;
         }
 
-        /* Animated background image layer */
-
         .hero-bg {
             position: absolute;
 
-            inset:
-                -4%;
+            inset: -4%;
 
             z-index: -3;
 
@@ -581,11 +589,14 @@
             transform:
                 scale(1.045);
 
-            will-change:
-                transform;
+            will-change: transform;
 
             animation:
-                heroBreath 14s ease-in-out infinite alternate;
+                heroBreath
+                14s
+                ease-in-out
+                infinite
+                alternate;
         }
 
         @keyframes heroBreath {
@@ -604,8 +615,6 @@
 
         }
 
-        /* dark gradient */
-
         .hero-overlay {
             position: absolute;
 
@@ -621,8 +630,6 @@
                     rgba(18,53,87,.28) 100%
                 );
         }
-
-        /* subtle light blob */
 
         .hero-glow {
             position: absolute;
@@ -646,7 +653,10 @@
                 blur(10px);
 
             animation:
-                glowFloat 8s ease-in-out infinite;
+                glowFloat
+                8s
+                ease-in-out
+                infinite;
 
             pointer-events: none;
         }
@@ -853,7 +863,7 @@
 
 
         /* =====================================================
-           CONTACT FLOAT
+           FLOATING CONTACT
         ====================================================== */
 
         .contact-float-wrap {
@@ -1012,7 +1022,7 @@
 
 
         /* =====================================================
-           SERVICES
+           SERVICES - NO IMAGE
         ====================================================== */
 
         .services-section {
@@ -1021,8 +1031,15 @@
         }
 
         .service-card {
+            position:
+                relative;
+
             height:
                 100%;
+
+            padding:
+                29px
+                27px;
 
             overflow:
                 hidden;
@@ -1034,81 +1051,71 @@
                 1px solid var(--border);
 
             border-radius:
-                10px;
+                14px;
 
             transition:
                 transform .45s var(--ease),
-                box-shadow .45s var(--ease);
+                box-shadow .45s var(--ease),
+                border-color .45s ease;
+        }
+
+        .service-card::before {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            width:
+                0;
+
+            height:
+                3px;
+
+            background:
+                var(--accent);
+
+            transition:
+                width .45s var(--ease);
         }
 
         .service-card:hover {
             transform:
                 translateY(-8px);
 
+            border-color:
+                rgba(23,54,93,.12);
+
             box-shadow:
                 var(--shadow-md);
         }
 
-        .service-image {
-            position:
-                relative;
-
-            height:
-                225px;
-
-            overflow:
-                hidden;
-
-            background:
-                #e6edf2;
-        }
-
-        .service-image img {
+        .service-card:hover::before {
             width:
                 100%;
-
-            height:
-                100%;
-
-            object-fit:
-                cover;
-
-            transition:
-                transform .7s var(--ease);
         }
 
-        .service-card:hover
-        .service-image img {
-            transform:
-                scale(1.055);
-        }
+        .service-top {
+            display:
+                flex;
 
-        .service-overlay {
-            position:
-                absolute;
+            align-items:
+                center;
 
-            inset:
-                0;
+            justify-content:
+                space-between;
 
-            background:
-                linear-gradient(
-                    180deg,
-                    transparent 58%,
-                    rgba(10,25,42,.40)
-                );
-        }
-
-        .service-content {
-            padding:
-                23px
-                24px
-                25px;
+            margin-bottom:
+                22px;
         }
 
         .service-index {
-            margin-bottom:
-                7px;
-
             color:
                 var(--accent-dark);
 
@@ -1117,18 +1124,64 @@
                 sans-serif;
 
             font-size:
-                .59rem;
+                .61rem;
 
             font-weight:
                 800;
 
             letter-spacing:
-                1.7px;
+                1.8px;
+        }
+
+        .service-icon {
+            width:
+                52px;
+
+            height:
+                52px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                var(--primary-soft);
+
+            color:
+                var(--primary);
+
+            border-radius:
+                12px;
+
+            font-size:
+                22px;
+
+            transition:
+                transform .45s var(--ease),
+                background .35s ease,
+                color .35s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform:
+                translateY(-4px)
+                rotate(-4deg);
+
+            background:
+                var(--primary);
+
+            color:
+                var(--white);
         }
 
         .service-title {
             margin-bottom:
-                9px;
+                10px;
 
             color:
                 var(--primary);
@@ -1138,7 +1191,7 @@
                 sans-serif;
 
             font-size:
-                .94rem;
+                .98rem;
 
             font-weight:
                 800;
@@ -1152,13 +1205,48 @@
                 var(--muted);
 
             font-size:
-                .72rem;
+                .74rem;
 
             line-height:
                 1.8;
 
             overflow-wrap:
                 anywhere;
+        }
+
+        .service-arrow {
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                6px;
+
+            margin-top:
+                20px;
+
+            color:
+                var(--primary);
+
+            font-size:
+                .64rem;
+
+            font-weight:
+                700;
+
+            transition:
+                gap .3s var(--ease),
+                color .3s ease;
+        }
+
+        .service-card:hover .service-arrow {
+            gap:
+                10px;
+
+            color:
+                var(--accent-dark);
         }
 
 
@@ -1338,8 +1426,7 @@
                 transform .35s var(--ease);
         }
 
-        .about-point:hover
-        .about-icon {
+        .about-point:hover .about-icon {
             transform:
                 translateY(-3px)
                 rotate(-3deg);
@@ -1376,7 +1463,7 @@
 
 
         /* =====================================================
-           PROJECT
+           PROJECT GALLERY
         ====================================================== */
 
         .projects-section {
@@ -2108,6 +2195,9 @@
 
             color:
                 var(--white);
+
+            overflow:
+                hidden;
         }
 
         .footer-brand {
@@ -2182,6 +2272,9 @@
 
             line-height:
                 1.85;
+
+            overflow-wrap:
+                anywhere;
         }
 
         .footer-title {
@@ -2365,7 +2458,10 @@
                 0 8px 24px rgba(37,211,102,.28);
 
             animation:
-                whatsappPulse 3s ease-in-out infinite;
+                whatsappPulse
+                3s
+                ease-in-out
+                infinite;
 
             transition:
                 transform .25s var(--ease);
@@ -2635,7 +2731,11 @@
 
             .hero-bg {
                 animation:
-                    heroBreathMobile 16s ease-in-out infinite alternate;
+                    heroBreathMobile
+                    16s
+                    ease-in-out
+                    infinite
+                    alternate;
             }
 
             @keyframes heroBreathMobile {
@@ -2815,26 +2915,36 @@
                SERVICE
             ------------------------------------------------ */
 
-            .service-image {
-                height:
-                    193px;
+            .service-card {
+                padding:
+                    24px
+                    22px;
             }
 
-            .service-content {
-                padding:
-                    20px
-                    21px
-                    22px;
+            .service-icon {
+                width:
+                    48px;
+
+                height:
+                    48px;
+
+                font-size:
+                    20px;
             }
 
             .service-title {
                 font-size:
-                    .87rem;
+                    .88rem;
             }
 
             .service-text {
                 font-size:
                     .69rem;
+            }
+
+            .service-arrow {
+                font-size:
+                    .60rem;
             }
 
 
@@ -3095,7 +3205,7 @@
 
 
             /* -----------------------------------------------
-               FLOATING WA
+               FLOATING WHATSAPP
             ------------------------------------------------ */
 
             .floating-whatsapp {
@@ -3142,11 +3252,6 @@
             .hero-description {
                 font-size:
                     .69rem;
-            }
-
-            .service-image {
-                height:
-                    178px;
             }
 
             .project-card {
@@ -3238,13 +3343,15 @@
                 </a>
 
 
-                <!-- MOBILE MENU -->
+                <!-- MOBILE BUTTON -->
 
                 <button
                     class="navbar-toggler d-lg-none ms-auto"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation"
+                    aria-expanded="false"
                     aria-label="Buka menu"
                 >
 
@@ -3457,7 +3564,6 @@
                         class="hero-features reveal reveal-delay-3"
                     >
 
-
                         <div class="hero-feature">
 
                             <i class="bi bi-shield-check"></i>
@@ -3489,7 +3595,6 @@
                             </span>
 
                         </div>
-
 
                     </div>
 
@@ -3529,9 +3634,7 @@
                 </div>
 
 
-                <div
-                    class="contact-float-item"
-                >
+                <div class="contact-float-item">
 
                     <div class="contact-float-label">
                         WhatsApp
@@ -3544,9 +3647,7 @@
                 </div>
 
 
-                <div
-                    class="contact-float-item"
-                >
+                <div class="contact-float-item">
 
                     <div class="contact-float-label">
                         Area Layanan
@@ -3626,7 +3727,7 @@
             <div class="row g-4">
 
 
-                <!-- 01 -->
+                <!-- SERVICE 01 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3634,47 +3735,52 @@
                         class="service-card reveal"
                     >
 
-                        <div class="service-image">
+                        <div class="service-top">
 
-                            <img
-                                src="assets/project-1.jpg"
-                                alt="Instalasi listrik SCE"
-                                loading="lazy"
-                            >
-
-                            <div
-                                class="service-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="service-content">
-
-                            <div class="service-index">
+                            <span class="service-index">
                                 01
+                            </span>
+
+                            <div class="service-icon">
+
+                                <i class="bi bi-house-gear"></i>
+
                             </div>
 
-                            <h3 class="service-title">
-                                Instalasi Listrik Baru
-                            </h3>
-
-                            <p class="service-text">
-
-                                Pemasangan jaringan listrik
-                                untuk rumah, kantor, toko,
-                                dan bangunan baru.
-
-                            </p>
-
                         </div>
+
+
+                        <h3 class="service-title">
+                            Instalasi Listrik Baru
+                        </h3>
+
+
+                        <p class="service-text">
+
+                            Pemasangan jaringan listrik
+                            untuk rumah, kantor, toko,
+                            dan bangunan baru.
+
+                        </p>
+
+
+                        <a
+                            href="#kontak"
+                            class="service-arrow"
+                        >
+
+                            Konsultasikan
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
 
                     </article>
 
                 </div>
 
 
-                <!-- 02 -->
+                <!-- SERVICE 02 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3682,47 +3788,52 @@
                         class="service-card reveal reveal-delay-1"
                     >
 
-                        <div class="service-image">
+                        <div class="service-top">
 
-                            <img
-                                src="assets/project-2.jpg"
-                                alt="Panel listrik SCE"
-                                loading="lazy"
-                            >
-
-                            <div
-                                class="service-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="service-content">
-
-                            <div class="service-index">
+                            <span class="service-index">
                                 02
+                            </span>
+
+                            <div class="service-icon">
+
+                                <i class="bi bi-diagram-3"></i>
+
                             </div>
 
-                            <h3 class="service-title">
-                                Panel & Distribusi
-                            </h3>
-
-                            <p class="service-text">
-
-                                Instalasi, pemeriksaan,
-                                dan maintenance panel
-                                distribusi listrik.
-
-                            </p>
-
                         </div>
+
+
+                        <h3 class="service-title">
+                            Panel & Distribusi
+                        </h3>
+
+
+                        <p class="service-text">
+
+                            Instalasi, pemeriksaan,
+                            dan maintenance panel
+                            distribusi listrik.
+
+                        </p>
+
+
+                        <a
+                            href="#kontak"
+                            class="service-arrow"
+                        >
+
+                            Konsultasikan
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
 
                     </article>
 
                 </div>
 
 
-                <!-- 03 -->
+                <!-- SERVICE 03 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3730,47 +3841,52 @@
                         class="service-card reveal reveal-delay-2"
                     >
 
-                        <div class="service-image">
+                        <div class="service-top">
 
-                            <img
-                                src="assets/project-3.jpg"
-                                alt="Maintenance listrik SCE"
-                                loading="lazy"
-                            >
-
-                            <div
-                                class="service-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="service-content">
-
-                            <div class="service-index">
+                            <span class="service-index">
                                 03
+                            </span>
+
+                            <div class="service-icon">
+
+                                <i class="bi bi-wrench-adjustable"></i>
+
                             </div>
 
-                            <h3 class="service-title">
-                                Maintenance
-                            </h3>
-
-                            <p class="service-text">
-
-                                Pemeriksaan dan perawatan
-                                berkala untuk membantu
-                                menjaga instalasi tetap optimal.
-
-                            </p>
-
                         </div>
+
+
+                        <h3 class="service-title">
+                            Maintenance
+                        </h3>
+
+
+                        <p class="service-text">
+
+                            Pemeriksaan dan perawatan
+                            berkala untuk membantu
+                            menjaga instalasi tetap optimal.
+
+                        </p>
+
+
+                        <a
+                            href="#kontak"
+                            class="service-arrow"
+                        >
+
+                            Konsultasikan
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
 
                     </article>
 
                 </div>
 
 
-                <!-- 04 -->
+                <!-- SERVICE 04 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3778,47 +3894,52 @@
                         class="service-card reveal"
                     >
 
-                        <div class="service-image">
+                        <div class="service-top">
 
-                            <img
-                                src="assets/project-4.jpg"
-                                alt="Perbaikan korsleting SCE"
-                                loading="lazy"
-                            >
-
-                            <div
-                                class="service-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="service-content">
-
-                            <div class="service-index">
+                            <span class="service-index">
                                 04
+                            </span>
+
+                            <div class="service-icon">
+
+                                <i class="bi bi-tools"></i>
+
                             </div>
 
-                            <h3 class="service-title">
-                                Perbaikan Korsleting
-                            </h3>
-
-                            <p class="service-text">
-
-                                Pemeriksaan dan penanganan
-                                masalah korsleting atau
-                                MCB yang sering turun.
-
-                            </p>
-
                         </div>
+
+
+                        <h3 class="service-title">
+                            Perbaikan Korsleting
+                        </h3>
+
+
+                        <p class="service-text">
+
+                            Pemeriksaan dan penanganan
+                            masalah korsleting atau
+                            MCB yang sering turun.
+
+                        </p>
+
+
+                        <a
+                            href="#kontak"
+                            class="service-arrow"
+                        >
+
+                            Konsultasikan
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
 
                     </article>
 
                 </div>
 
 
-                <!-- 05 -->
+                <!-- SERVICE 05 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3826,46 +3947,51 @@
                         class="service-card reveal reveal-delay-1"
                     >
 
-                        <div class="service-image">
+                        <div class="service-top">
 
-                            <img
-                                src="assets/project-5.jpg"
-                                alt="Penangkal petir SCE"
-                                loading="lazy"
-                            >
-
-                            <div
-                                class="service-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="service-content">
-
-                            <div class="service-index">
+                            <span class="service-index">
                                 05
+                            </span>
+
+                            <div class="service-icon">
+
+                                <i class="bi bi-lightning-charge"></i>
+
                             </div>
 
-                            <h3 class="service-title">
-                                Penangkal Petir
-                            </h3>
-
-                            <p class="service-text">
-
-                                Instalasi dan pemeriksaan
-                                sistem penangkal petir.
-
-                            </p>
-
                         </div>
+
+
+                        <h3 class="service-title">
+                            Penangkal Petir
+                        </h3>
+
+
+                        <p class="service-text">
+
+                            Instalasi dan pemeriksaan
+                            sistem penangkal petir.
+
+                        </p>
+
+
+                        <a
+                            href="#kontak"
+                            class="service-arrow"
+                        >
+
+                            Konsultasikan
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
 
                     </article>
 
                 </div>
 
 
-                <!-- 06 -->
+                <!-- SERVICE 06 -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -3873,44 +3999,50 @@
                         class="service-card reveal reveal-delay-2"
                     >
 
-                        <div class="service-image">
+                        <div class="service-top">
 
-                            <img
-                                src="assets/project-6.jpg"
-                                alt="Pemeriksaan instalasi SCE"
-                                loading="lazy"
-                            >
-
-                            <div
-                                class="service-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="service-content">
-
-                            <div class="service-index">
+                            <span class="service-index">
                                 06
+                            </span>
+
+                            <div class="service-icon">
+
+                                <i class="bi bi-search"></i>
+
                             </div>
 
-                            <h3 class="service-title">
-                                Pemeriksaan Instalasi
-                            </h3>
-
-                            <p class="service-text">
-
-                                Pemeriksaan kondisi instalasi
-                                untuk menemukan potensi
-                                masalah kelistrikan.
-
-                            </p>
-
                         </div>
+
+
+                        <h3 class="service-title">
+                            Pemeriksaan Instalasi
+                        </h3>
+
+
+                        <p class="service-text">
+
+                            Pemeriksaan kondisi instalasi
+                            untuk menemukan potensi
+                            masalah kelistrikan.
+
+                        </p>
+
+
+                        <a
+                            href="#kontak"
+                            class="service-arrow"
+                        >
+
+                            Konsultasikan
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
 
                     </article>
 
                 </div>
+
 
             </div>
 
@@ -3952,15 +4084,11 @@
 
                             <div>
 
-                                <div
-                                    class="about-media-title"
-                                >
+                                <div class="about-media-title">
                                     Bekerja dengan Teliti
                                 </div>
 
-                                <p
-                                    class="about-media-text"
-                                >
+                                <p class="about-media-text">
 
                                     Keamanan dan kualitas
                                     menjadi perhatian dalam
@@ -3982,7 +4110,6 @@
                     <div
                         class="about-content reveal reveal-delay-1"
                     >
-
 
                         <span class="section-label">
                             Tentang SCE
@@ -4026,7 +4153,9 @@
                             <div class="about-point">
 
                                 <div class="about-icon">
+
                                     <i class="bi bi-shield-check"></i>
+
                                 </div>
 
                                 <div>
@@ -4051,7 +4180,9 @@
                             <div class="about-point">
 
                                 <div class="about-icon">
+
                                     <i class="bi bi-person-check"></i>
+
                                 </div>
 
                                 <div>
@@ -4076,7 +4207,9 @@
                             <div class="about-point">
 
                                 <div class="about-icon">
+
                                     <i class="bi bi-chat-dots"></i>
+
                                 </div>
 
                                 <div>
@@ -4113,7 +4246,7 @@
 
 
     <!-- =====================================================
-         PROJECTS
+         PROJECT GALLERY
     ====================================================== -->
 
     <section
@@ -4153,15 +4286,15 @@
             <div class="row g-3">
 
 
+                <!-- PROJECT 1 -->
+
                 <div class="col-6 col-lg-4">
 
-                    <div
-                        class="project-card reveal"
-                    >
+                    <div class="project-card reveal">
 
                         <img
                             src="assets/project-1.jpg"
-                            alt="Instalasi listrik"
+                            alt="Proyek instalasi listrik"
                             loading="lazy"
                         >
 
@@ -4188,6 +4321,8 @@
                 </div>
 
 
+                <!-- PROJECT 2 -->
+
                 <div class="col-6 col-lg-4">
 
                     <div
@@ -4196,7 +4331,7 @@
 
                         <img
                             src="assets/project-2.jpg"
-                            alt="Panel listrik"
+                            alt="Proyek panel listrik"
                             loading="lazy"
                         >
 
@@ -4223,6 +4358,8 @@
                 </div>
 
 
+                <!-- PROJECT 3 -->
+
                 <div class="col-6 col-lg-4">
 
                     <div
@@ -4231,7 +4368,7 @@
 
                         <img
                             src="assets/project-3.jpg"
-                            alt="Maintenance"
+                            alt="Maintenance listrik"
                             loading="lazy"
                         >
 
@@ -4258,15 +4395,15 @@
                 </div>
 
 
+                <!-- PROJECT 4 -->
+
                 <div class="col-6 col-lg-4">
 
-                    <div
-                        class="project-card reveal"
-                    >
+                    <div class="project-card reveal">
 
                         <img
                             src="assets/project-4.jpg"
-                            alt="Pekerjaan lapangan"
+                            alt="Pekerjaan teknisi"
                             loading="lazy"
                         >
 
@@ -4292,6 +4429,8 @@
 
                 </div>
 
+
+                <!-- PROJECT 5 -->
 
                 <div class="col-6 col-lg-4">
 
@@ -4327,6 +4466,8 @@
 
                 </div>
 
+
+                <!-- PROJECT 6 -->
 
                 <div class="col-6 col-lg-4">
 
@@ -5178,6 +5319,7 @@
     ></script>
 
 
+
     <!-- =====================================================
          CUSTOM JAVASCRIPT
     ====================================================== -->
@@ -5190,7 +5332,7 @@
 
 
                 /* =================================================
-                   NAVBAR SCROLL EFFECT
+                   NAVBAR SCROLL
                 ================================================== */
 
                 const navbar =
@@ -5198,7 +5340,7 @@
                         "siteNavbar"
                     );
 
-                function handleNavbar() {
+                function updateNavbar() {
 
                     if (!navbar) return;
 
@@ -5220,15 +5362,15 @@
 
                 window.addEventListener(
                     "scroll",
-                    handleNavbar,
+                    updateNavbar,
                     { passive: true }
                 );
 
-                handleNavbar();
+                updateNavbar();
 
 
                 /* =================================================
-                   SMOOTH PARALLAX HERO
+                   HERO PARALLAX
                 ================================================== */
 
                 const hero =
@@ -5241,7 +5383,7 @@
                         "heroBg"
                     );
 
-                const isTouch =
+                const touchDevice =
                     window.matchMedia(
                         "(hover: none)"
                     ).matches;
@@ -5249,7 +5391,7 @@
                 if (
                     hero &&
                     heroBg &&
-                    !isTouch
+                    !touchDevice
                 ) {
 
                     hero.addEventListener(
@@ -5274,10 +5416,10 @@
                                 rect.height;
 
                             const moveX =
-                                (x - .5) * -18;
+                                (x - 0.5) * -16;
 
                             const moveY =
-                                (y - .5) * -12;
+                                (y - 0.5) * -11;
 
                             heroBg.style.transform =
                                 `
@@ -5306,7 +5448,7 @@
 
 
                 /* =================================================
-                   REVEAL ON SCROLL
+                   SCROLL REVEAL
                 ================================================== */
 
                 const revealElements =
@@ -5319,11 +5461,11 @@
                     in window
                 ) {
 
-                    const revealObserver =
+                    const observer =
                         new IntersectionObserver(
                             function (
                                 entries,
-                                observer
+                                observerInstance
                             ) {
 
                                 entries.forEach(
@@ -5337,7 +5479,7 @@
                                                 "show"
                                             );
 
-                                            observer.unobserve(
+                                            observerInstance.unobserve(
                                                 entry.target
                                             );
 
@@ -5348,16 +5490,17 @@
 
                             },
                             {
-                                threshold: .12,
+                                threshold: .10,
+
                                 rootMargin:
-                                    "0px 0px -50px 0px"
+                                    "0px 0px -45px 0px"
                             }
                         );
 
                     revealElements.forEach(
                         function (element) {
 
-                            revealObserver.observe(
+                            observer.observe(
                                 element
                             );
 
@@ -5380,17 +5523,17 @@
 
 
                 /* =================================================
-                   CLOSE MOBILE NAV AFTER CLICK
+                   CLOSE MOBILE MENU
                 ================================================== */
-
-                const navLinks =
-                    document.querySelectorAll(
-                        "#mainNavigation .nav-link"
-                    );
 
                 const navigation =
                     document.getElementById(
                         "mainNavigation"
+                    );
+
+                const navLinks =
+                    document.querySelectorAll(
+                        "#mainNavigation .nav-link"
                     );
 
                 navLinks.forEach(
@@ -5401,50 +5544,24 @@
                             function () {
 
                                 if (
-                                    window.innerWidth <= 991
+                                    window.innerWidth <= 991 &&
+                                    navigation
                                 ) {
 
-                                    const collapse =
+                                    const instance =
                                         bootstrap
                                             .Collapse
                                             .getInstance(
                                                 navigation
                                             );
 
-                                    if (collapse) {
+                                    if (instance) {
 
-                                        collapse.hide();
+                                        instance.hide();
 
                                     }
 
                                 }
-
-                            }
-                        );
-
-                    }
-                );
-
-
-                /* =================================================
-                   SOFT IMAGE LOAD
-                ================================================== */
-
-                const images =
-                    document.querySelectorAll(
-                        "img"
-                    );
-
-                images.forEach(
-                    function (image) {
-
-                        image.addEventListener(
-                            "load",
-                            function () {
-
-                                image.classList.add(
-                                    "loaded"
-                                );
 
                             }
                         );
