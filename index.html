@@ -3,8 +3,16 @@
 
 <head>
 
+    <!-- =====================================================
+         BASIC CONFIGURATION
+    ====================================================== -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -16,15 +24,25 @@
         content="SCE, instalasi listrik, teknisi listrik, listrik Banjarmasin, panel listrik, penangkal petir"
     >
 
-    <meta name="author" content="SCE - Sentral Computer n Electronic">
-    <meta name="theme-color" content="#1e3c72">
+    <meta
+        name="author"
+        content="SCE - Sentral Computer n Electronic"
+    >
 
-    <title>SCE | Instalasi Listrik Aman & Terpercaya</title>
+    <meta
+        name="theme-color"
+        content="#1e3c72"
+    >
+
+    <title>
+        SCE | Instalasi Listrik Aman & Terpercaya
+    </title>
 
 
     <!-- =====================================================
          GOOGLE FONT
     ====================================================== -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
@@ -32,8 +50,9 @@
 
 
     <!-- =====================================================
-         BOOTSTRAP
+         BOOTSTRAP 5
     ====================================================== -->
+
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -43,11 +62,16 @@
     <!-- =====================================================
          BOOTSTRAP ICONS
     ====================================================== -->
+
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     >
 
+
+    <!-- =====================================================
+         CUSTOM CSS
+    ====================================================== -->
 
     <style>
 
@@ -56,6 +80,7 @@
         ====================================================== */
 
         :root {
+
             --primary: #1e3c72;
             --primary-dark: #152c55;
             --secondary: #2a5298;
@@ -73,18 +98,23 @@
             --whatsapp: #25d366;
             --whatsapp-dark: #1ebe57;
 
-            --shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.11);
+            --shadow:
+                0 8px 25px rgba(0, 0, 0, 0.07);
+
+            --shadow-hover:
+                0 15px 35px rgba(0, 0, 0, 0.11);
 
             --radius: 16px;
         }
 
 
         /* =====================================================
-           GLOBAL
+           RESET / GLOBAL
         ====================================================== */
 
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -92,19 +122,39 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 75px;
+            scroll-padding-top: 78px;
         }
 
         body {
+            width: 100%;
+            max-width: 100%;
+            min-height: 100vh;
+
+            margin: 0;
+            padding: 0;
+
             font-family: 'Poppins', sans-serif;
+
             background: var(--light);
             color: var(--text);
+
             overflow-x: hidden;
         }
 
-        img {
+        body,
+        section,
+        header,
+        footer,
+        nav,
+        main,
+        div {
             max-width: 100%;
+        }
+
+        img {
             display: block;
+            max-width: 100%;
+            height: auto;
         }
 
         a {
@@ -116,8 +166,14 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        section {
+        section,
+        header,
+        footer {
             overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
         }
 
 
@@ -130,31 +186,48 @@
         }
 
         .section-title {
+            margin-bottom: 10px;
+
             color: var(--primary);
+
             font-size: 2rem;
             font-weight: 700;
+
             text-align: center;
-            margin-bottom: 10px;
         }
 
         .section-title-left {
             text-align: left;
         }
 
+        .section-title-light {
+            color: var(--white);
+        }
+
         .section-subtitle {
+            width: 100%;
             max-width: 700px;
+
             margin: 0 auto 40px;
+
             color: var(--muted);
+
             font-size: 0.92rem;
             line-height: 1.8;
+
             text-align: center;
+
+            overflow-wrap: anywhere;
         }
 
         .title-line {
             width: 55px;
             height: 4px;
+
             margin: 13px auto 18px;
+
             background: var(--accent);
+
             border-radius: 20px;
         }
 
@@ -168,36 +241,67 @@
         ====================================================== */
 
         .navbar {
+            width: 100%;
+
             padding: 8px 0;
+
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+
+            box-shadow:
+                0 2px 12px rgba(0, 0, 0, 0.07);
+
+            z-index: 1050;
+        }
+
+        .navbar .container {
+            min-width: 0;
+        }
+
+        .navbar-brand {
+            min-width: 0;
+            max-width: calc(100% - 60px);
         }
 
         .navbar-logo {
+            flex-shrink: 0;
+
             width: 44px;
             height: 44px;
+
             object-fit: cover;
+
             border-radius: 8px;
         }
 
         .brand-name {
             color: var(--primary);
+
             font-size: 0.95rem;
             font-weight: 800;
+
             line-height: 1;
         }
 
         .brand-subtitle {
             display: block;
+
             margin-top: 4px;
+
             color: #666;
+
             font-size: 0.53rem;
             font-weight: 500;
+
             line-height: 1.1;
+
+            white-space: normal;
         }
 
         .navbar-toggler {
+            flex-shrink: 0;
+
             padding: 6px 8px;
+
             border-radius: 10px;
         }
 
@@ -207,7 +311,9 @@
 
         .navbar-nav .nav-link {
             padding: 9px 10px !important;
+
             color: #333;
+
             font-size: 0.84rem;
             font-weight: 600;
         }
@@ -216,17 +322,28 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+
             gap: 7px;
+
+            min-height: 42px;
 
             padding: 9px 15px;
 
             background: var(--whatsapp);
-            color: white;
+            color: var(--white);
 
+            border: none;
             border-radius: 25px;
 
             font-size: 0.82rem;
             font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-navbar-wa:hover {
+            background: var(--whatsapp-dark);
+            color: var(--white);
         }
 
 
@@ -236,12 +353,15 @@
 
         .hero {
             position: relative;
-            min-height: 690px;
+
+            width: 100%;
+
+            min-height: 680px;
 
             display: flex;
             align-items: center;
 
-            color: white;
+            color: var(--white);
 
             background:
                 linear-gradient(
@@ -254,6 +374,7 @@
 
         .hero::before {
             content: "";
+
             position: absolute;
             inset: 0;
 
@@ -263,6 +384,13 @@
                     rgba(255, 193, 7, 0.18),
                     transparent 30%
                 );
+        }
+
+        .hero .container,
+        .hero .row,
+        .hero-content,
+        .hero-visual {
+            min-width: 0;
         }
 
         .hero-content {
@@ -278,23 +406,37 @@
             margin-bottom: 18px;
             padding: 7px 14px;
 
-            background: rgba(255, 193, 7, 0.12);
-            border: 1px solid rgba(255, 193, 7, 0.3);
+            background:
+                rgba(255, 193, 7, 0.12);
+
+            border:
+                1px solid rgba(255, 193, 7, 0.30);
+
             border-radius: 30px;
 
             color: var(--accent);
 
             font-size: 0.72rem;
             font-weight: 600;
+
+            max-width: 100%;
         }
 
         .hero h1 {
             margin-bottom: 18px;
 
-            font-size: clamp(2.25rem, 6vw, 4.4rem);
+            font-size:
+                clamp(
+                    2.15rem,
+                    6vw,
+                    4.4rem
+                );
+
             font-weight: 800;
 
             line-height: 1.12;
+
+            overflow-wrap: anywhere;
         }
 
         .hero h1 span {
@@ -302,22 +444,29 @@
         }
 
         .hero-description {
+            width: 100%;
             max-width: 680px;
 
             margin-bottom: 26px;
 
-            color: rgba(255, 255, 255, 0.87);
+            color:
+                rgba(255, 255, 255, 0.87);
 
             font-size: 1rem;
             font-weight: 300;
 
             line-height: 1.8;
+
+            overflow-wrap: anywhere;
         }
 
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
+
             gap: 12px;
+
+            max-width: 100%;
         }
 
         .btn-hero-primary,
@@ -325,9 +474,11 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+
             gap: 8px;
 
             min-height: 48px;
+
             padding: 12px 24px;
 
             border-radius: 30px;
@@ -346,41 +497,57 @@
         .btn-hero-primary:hover {
             background: var(--accent-hover);
             color: #111;
+
             transform: translateY(-2px);
         }
 
         .btn-hero-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
+            border:
+                1px solid rgba(255, 255, 255, 0.50);
+
+            color: var(--white);
         }
 
         .btn-hero-secondary:hover {
-            background: white;
+            background: var(--white);
             color: var(--primary);
         }
 
         .hero-info {
             display: flex;
             flex-wrap: wrap;
+
             gap: 20px;
 
             margin-top: 32px;
+
+            max-width: 100%;
         }
 
         .hero-info-item {
             display: flex;
             align-items: center;
+
             gap: 8px;
+
+            min-width: 0;
         }
 
         .hero-info-item i {
+            flex-shrink: 0;
+
             color: var(--accent);
+
             font-size: 1rem;
         }
 
         .hero-info-item span {
-            color: rgba(255, 255, 255, 0.83);
+            color:
+                rgba(255, 255, 255, 0.83);
+
             font-size: 0.76rem;
+
+            overflow-wrap: anywhere;
         }
 
 
@@ -391,11 +558,13 @@
         .hero-visual {
             position: relative;
 
+            width: 100%;
+
             display: flex;
             align-items: center;
             justify-content: center;
 
-            min-height: 430px;
+            min-height: 420px;
         }
 
         .hero-visual-card {
@@ -403,14 +572,18 @@
 
             width: 100%;
             max-width: 420px;
+
             height: 390px;
 
             overflow: hidden;
 
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
             border-radius: 24px;
 
-            background: rgba(255, 255, 255, 0.08);
+            background:
+                rgba(255, 255, 255, 0.08);
 
             box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.18);
@@ -419,6 +592,7 @@
         .hero-visual-card img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
         }
 
@@ -433,45 +607,62 @@
 
             padding: 30px;
 
+            color: var(--white);
+
             text-align: center;
-            color: white;
         }
 
         .hero-placeholder i {
             margin-bottom: 15px;
+
             color: var(--accent);
+
             font-size: 80px;
         }
 
         .hero-placeholder h5 {
             margin-bottom: 6px;
+
             font-weight: 700;
         }
 
         .hero-placeholder p {
             margin: 0;
-            color: rgba(255,255,255,0.65);
+
+            color:
+                rgba(255, 255, 255, 0.65);
+
             font-size: 0.75rem;
+
+            overflow-wrap: anywhere;
         }
 
         .hero-floating-card {
             position: absolute;
-            right: -10px;
+
+            right: -8px;
             bottom: 20px;
+
+            max-width: calc(100% - 20px);
 
             display: flex;
             align-items: center;
+
             gap: 10px;
 
             padding: 13px 16px;
 
-            background: white;
+            background: var(--white);
+
             border-radius: 14px;
 
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.20);
         }
 
         .hero-floating-icon {
+            flex-shrink: 0;
+
             width: 38px;
             height: 38px;
 
@@ -479,27 +670,39 @@
             align-items: center;
             justify-content: center;
 
-            background: rgba(37, 211, 102, 0.12);
+            background:
+                rgba(37, 211, 102, 0.12);
+
             border-radius: 10px;
 
             color: var(--whatsapp);
+
             font-size: 18px;
         }
 
         .hero-floating-card strong {
             display: block;
+
             color: #222;
+
             font-size: 0.75rem;
+
+            white-space: nowrap;
         }
 
         .hero-floating-card small {
+            display: block;
+
             color: var(--muted);
+
             font-size: 0.62rem;
+
+            overflow-wrap: anywhere;
         }
 
 
         /* =====================================================
-           SERVICE
+           SERVICES
         ====================================================== */
 
         .service-card {
@@ -507,7 +710,8 @@
 
             padding: 24px;
 
-            background: white;
+            background: var(--white);
+
             border: none;
             border-radius: var(--radius);
 
@@ -518,6 +722,7 @@
 
         .service-card:hover {
             transform: translateY(-7px);
+
             box-shadow: var(--shadow-hover);
         }
 
@@ -531,29 +736,40 @@
 
             margin-bottom: 17px;
 
-            background: rgba(30, 60, 114, 0.08);
+            background:
+                rgba(30, 60, 114, 0.08);
+
             border-radius: 14px;
 
             color: var(--primary);
+
             font-size: 27px;
         }
 
         .service-card h5 {
             margin-bottom: 9px;
+
             font-size: 1rem;
             font-weight: 700;
+
+            overflow-wrap: anywhere;
         }
 
         .service-card p {
             margin: 0;
+
             color: var(--muted);
+
             font-size: 0.82rem;
             line-height: 1.7;
+
+            overflow-wrap: anywhere;
         }
 
         .service-link {
             display: inline-flex;
             align-items: center;
+
             gap: 5px;
 
             margin-top: 15px;
@@ -566,17 +782,21 @@
 
 
         /* =====================================================
-           ADVANTAGE
+           ADVANTAGES
         ====================================================== */
 
         .advantages-section {
-            background: white;
+            background: var(--white);
         }
 
         .advantage-item {
             display: flex;
+
             gap: 13px;
+
             margin-bottom: 24px;
+
+            min-width: 0;
         }
 
         .advantage-icon {
@@ -589,15 +809,19 @@
             align-items: center;
             justify-content: center;
 
-            background: rgba(255, 193, 7, 0.15);
+            background:
+                rgba(255, 193, 7, 0.15);
+
             border-radius: 12px;
 
             color: #937300;
+
             font-size: 19px;
         }
 
         .advantage-item h5 {
             margin-bottom: 4px;
+
             font-size: 0.92rem;
             font-weight: 700;
         }
@@ -609,10 +833,14 @@
 
             font-size: 0.78rem;
             line-height: 1.6;
+
+            overflow-wrap: anywhere;
         }
 
         .advantage-visual {
             position: relative;
+
+            width: 100%;
 
             min-height: 420px;
 
@@ -631,11 +859,11 @@
         }
 
         .advantage-visual img {
-            width: 100%;
-            height: 100%;
-
             position: absolute;
             inset: 0;
+
+            width: 100%;
+            height: 100%;
 
             object-fit: cover;
         }
@@ -649,14 +877,24 @@
             align-items: center;
             justify-content: center;
 
-            color: rgba(255,255,255,0.75);
+            padding: 20px;
+
+            color:
+                rgba(255, 255, 255, 0.75);
+
             text-align: center;
         }
 
         .advantage-placeholder i {
             margin-bottom: 10px;
+
             color: var(--accent);
+
             font-size: 75px;
+        }
+
+        .advantage-placeholder p {
+            overflow-wrap: anywhere;
         }
 
         .advantage-overlay {
@@ -671,21 +909,28 @@
             background:
                 linear-gradient(
                     transparent 30%,
-                    rgba(0,0,0,0.72)
+                    rgba(0, 0, 0, 0.72)
                 );
         }
 
         .advantage-overlay h4 {
             margin-bottom: 6px;
-            color: white;
+
+            color: var(--white);
+
             font-size: 1.15rem;
             font-weight: 700;
         }
 
         .advantage-overlay p {
             margin: 0;
-            color: rgba(255,255,255,0.8);
+
+            color:
+                rgba(255, 255, 255, 0.80);
+
             font-size: 0.75rem;
+
+            overflow-wrap: anywhere;
         }
 
 
@@ -702,7 +947,8 @@
 
             padding: 30px;
 
-            background: white;
+            background: var(--white);
+
             border-radius: 18px;
 
             box-shadow: var(--shadow);
@@ -712,8 +958,11 @@
             margin-bottom: 15px;
 
             color: var(--primary);
+
             font-size: 1.3rem;
             font-weight: 700;
+
+            overflow-wrap: anywhere;
         }
 
         .about-box p {
@@ -721,20 +970,27 @@
 
             font-size: 0.83rem;
             line-height: 1.85;
+
+            overflow-wrap: anywhere;
         }
 
         .vision-box {
             margin-top: 20px;
+
             padding: 18px;
 
             background: #fff8df;
 
-            border-left: 4px solid var(--accent);
-            border-radius: 0 10px 10px 0;
+            border-left:
+                4px solid var(--accent);
+
+            border-radius:
+                0 10px 10px 0;
         }
 
         .vision-box strong {
             color: var(--primary);
+
             font-size: 0.84rem;
         }
 
@@ -753,7 +1009,8 @@
             align-items: center;
             justify-content: center;
 
-            background: white;
+            background: var(--white);
+
             border-radius: 16px;
 
             box-shadow: var(--shadow);
@@ -763,19 +1020,26 @@
 
         .about-stat i {
             color: var(--primary);
+
             font-size: 26px;
         }
 
         .about-stat h4 {
             margin: 10px 0 4px;
+
             color: var(--primary);
+
             font-weight: 800;
         }
 
         .about-stat p {
             margin: 0;
+
             color: var(--muted);
-            font-size: 0.7rem;
+
+            font-size: 0.70rem;
+
+            overflow-wrap: anywhere;
         }
 
 
@@ -784,20 +1048,24 @@
         ====================================================== */
 
         .gallery-section {
-            background: white;
+            background: var(--white);
         }
 
         .gallery-card {
             position: relative;
 
+            width: 100%;
             height: 245px;
 
             overflow: hidden;
 
             background: #e8edf4;
+
             border-radius: 15px;
 
             box-shadow: var(--shadow);
+
+            cursor: pointer;
         }
 
         .gallery-card img {
@@ -822,6 +1090,8 @@
             align-items: center;
             justify-content: center;
 
+            padding: 15px;
+
             color: #7f8b9b;
 
             text-align: center;
@@ -829,11 +1099,14 @@
 
         .gallery-placeholder i {
             margin-bottom: 8px;
+
             font-size: 38px;
         }
 
         .gallery-placeholder span {
             font-size: 0.72rem;
+
+            overflow-wrap: anywhere;
         }
 
         .gallery-overlay {
@@ -847,20 +1120,25 @@
             background:
                 linear-gradient(
                     transparent,
-                    rgba(0,0,0,0.8)
+                    rgba(0, 0, 0, 0.80)
                 );
 
-            color: white;
+            color: var(--white);
         }
 
         .gallery-overlay h6 {
             margin: 0 0 3px;
+
             font-size: 0.85rem;
             font-weight: 700;
+
+            overflow-wrap: anywhere;
         }
 
         .gallery-overlay small {
-            color: rgba(255,255,255,0.72);
+            color:
+                rgba(255, 255, 255, 0.72);
+
             font-size: 0.63rem;
         }
 
@@ -883,9 +1161,11 @@
 
             padding: 20px;
 
-            background: rgba(255,255,255,0.08);
+            background:
+                rgba(255, 255, 255, 0.08);
 
-            border: 1px solid rgba(255,255,255,0.1);
+            border:
+                1px solid rgba(255, 255, 255, 0.10);
 
             border-radius: 14px;
 
@@ -895,12 +1175,15 @@
         }
 
         .area-card:hover {
-            background: rgba(255,255,255,0.15);
+            background:
+                rgba(255, 255, 255, 0.15);
+
             transform: translateY(-4px);
         }
 
         .area-card i {
             color: var(--accent);
+
             font-size: 22px;
         }
 
@@ -908,13 +1191,18 @@
             margin-top: 9px;
             margin-bottom: 4px;
 
-            color: white;
+            color: var(--white);
+
             font-size: 0.82rem;
             font-weight: 700;
+
+            overflow-wrap: anywhere;
         }
 
         .area-card small {
-            color: rgba(255,255,255,0.68);
+            color:
+                rgba(255, 255, 255, 0.68);
+
             font-size: 0.63rem;
         }
 
@@ -929,9 +1217,11 @@
 
         .testimonial-card {
             height: 100%;
+
             padding: 24px;
 
-            background: white;
+            background: var(--white);
+
             border-radius: 16px;
 
             box-shadow: var(--shadow);
@@ -941,9 +1231,11 @@
             display: inline-block;
 
             margin-bottom: 12px;
+
             padding: 4px 8px;
 
             background: #fff3cd;
+
             border-radius: 20px;
 
             color: #856404;
@@ -954,7 +1246,9 @@
 
         .testimonial-stars {
             margin-bottom: 13px;
+
             color: var(--accent);
+
             font-size: 15px;
         }
 
@@ -964,20 +1258,28 @@
             color: var(--muted);
 
             font-size: 0.78rem;
+
             line-height: 1.75;
 
             font-style: italic;
+
+            overflow-wrap: anywhere;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
+
             gap: 10px;
 
             margin-top: 18px;
+
+            min-width: 0;
         }
 
         .testimonial-avatar {
+            flex-shrink: 0;
+
             width: 40px;
             height: 40px;
 
@@ -986,9 +1288,10 @@
             justify-content: center;
 
             background: var(--primary);
+
             border-radius: 50%;
 
-            color: white;
+            color: var(--white);
 
             font-size: 0.8rem;
             font-weight: 700;
@@ -996,11 +1299,15 @@
 
         .testimonial-author strong {
             display: block;
+
             font-size: 0.78rem;
         }
 
         .testimonial-author small {
+            display: block;
+
             color: var(--muted);
+
             font-size: 0.62rem;
         }
 
@@ -1010,22 +1317,30 @@
         ====================================================== */
 
         .contact-section {
-            background: white;
+            background: var(--white);
         }
 
         .contact-card {
             height: 100%;
+
             padding: 28px;
 
             background: var(--light);
+
             border-radius: 18px;
+
+            min-width: 0;
         }
 
         .contact-item {
             display: flex;
+            align-items: flex-start;
+
             gap: 12px;
 
             margin-bottom: 20px;
+
+            min-width: 0;
         }
 
         .contact-icon {
@@ -1038,42 +1353,66 @@
             align-items: center;
             justify-content: center;
 
-            background: rgba(30,60,114,0.08);
+            background:
+                rgba(30, 60, 114, 0.08);
+
             border-radius: 10px;
 
             color: var(--primary);
         }
 
+        .contact-item > div:last-child {
+            min-width: 0;
+            flex: 1;
+        }
+
         .contact-item h6 {
             margin-bottom: 4px;
-            font-size: 0.8rem;
+
+            font-size: 0.80rem;
             font-weight: 700;
         }
 
         .contact-item p {
+            width: 100%;
+
             margin: 0;
 
             color: var(--muted);
 
             font-size: 0.74rem;
             line-height: 1.65;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .contact-email {
+            overflow-wrap: anywhere !important;
+            word-break: break-word !important;
         }
 
         .map-container {
+            width: 100%;
             min-height: 430px;
 
             overflow: hidden;
 
             background: #e9edf2;
+
             border-radius: 18px;
 
             box-shadow: var(--shadow);
         }
 
         .map-container iframe {
-            width: 100%;
-            height: 430px;
             display: block;
+
+            width: 100%;
+            max-width: 100%;
+
+            height: 430px;
+
             border: 0;
         }
 
@@ -1084,12 +1423,20 @@
 
         .cta-section {
             padding: 65px 0;
+
             background:
                 linear-gradient(
                     135deg,
                     #f7c600,
                     var(--accent)
                 );
+        }
+
+        .cta-content {
+            width: 100%;
+            max-width: 700px;
+
+            margin: 0 auto;
         }
 
         .cta-content h2 {
@@ -1099,30 +1446,47 @@
 
             font-size: 2rem;
             font-weight: 800;
+
+            overflow-wrap: anywhere;
         }
 
         .cta-content p {
             margin-bottom: 22px;
+
             color: #333;
-            font-size: 0.9rem;
+
+            font-size: 0.90rem;
+
+            overflow-wrap: anywhere;
         }
 
         .btn-cta {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+
             gap: 8px;
 
             min-height: 48px;
+
             padding: 12px 25px;
 
             background: var(--dark);
-            color: white;
+            color: var(--white);
 
             border-radius: 30px;
 
             font-size: 0.84rem;
             font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background: #000;
+            color: var(--white);
+
+            transform: translateY(-2px);
         }
 
 
@@ -1131,25 +1495,48 @@
         ====================================================== */
 
         .footer {
+            width: 100%;
+
             padding: 55px 0 25px;
 
             background: var(--dark);
-            color: white;
+
+            color: var(--white);
+
+            overflow: hidden;
+        }
+
+        .footer .container {
+            min-width: 0;
+        }
+
+        .footer .row {
+            min-width: 0;
+        }
+
+        .footer-column {
+            min-width: 0;
         }
 
         .footer-logo {
             display: flex;
             align-items: center;
+
             gap: 9px;
 
             margin-bottom: 16px;
+
+            min-width: 0;
         }
 
         .footer-logo img {
+            flex-shrink: 0;
+
             width: 42px;
             height: 42px;
 
             object-fit: cover;
+
             border-radius: 7px;
         }
 
@@ -1158,16 +1545,26 @@
         }
 
         .footer-logo small {
-            font-size: 0.6rem;
+            display: block;
+
+            font-size: 0.60rem;
+
+            overflow-wrap: anywhere;
         }
 
         .footer-description {
+            width: 100%;
             max-width: 430px;
+
+            margin: 0;
 
             color: #9ca3af;
 
             font-size: 0.76rem;
             line-height: 1.8;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
         .footer h6 {
@@ -1190,34 +1587,83 @@
 
         .footer-links a {
             color: #9ca3af;
+
             font-size: 0.72rem;
+
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
         }
 
         .footer-contact {
+            width: 100%;
+            min-width: 0;
+
             color: #9ca3af;
+
             font-size: 0.72rem;
             line-height: 1.8;
         }
 
         .footer-contact p {
-            margin-bottom: 7px;
+            display: flex;
+            align-items: flex-start;
+
+            gap: 4px;
+
+            width: 100%;
+
+            margin-bottom: 8px;
+
+            min-width: 0;
         }
 
-        .footer-contact i {
-            margin-right: 6px;
+        .footer-contact p i {
+            flex-shrink: 0;
+
+            width: 18px;
+
+            margin-top: 3px;
+
             color: var(--accent);
+
+            text-align: center;
+        }
+
+        .footer-contact span {
+            min-width: 0;
+            flex: 1;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .footer-email {
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
         .footer-divider {
             margin: 35px 0 18px;
+
             border-color: #374151;
         }
 
         .copyright {
+            width: 100%;
+
             margin: 0;
+
             color: #6b7280;
+
             font-size: 0.62rem;
+
             text-align: center;
+
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
 
@@ -1241,7 +1687,8 @@
             justify-content: center;
 
             background: var(--whatsapp);
-            color: white;
+
+            color: var(--white);
 
             border-radius: 50%;
 
@@ -1249,6 +1696,38 @@
 
             box-shadow:
                 0 5px 18px rgba(37, 211, 102, 0.35);
+
+            transition: 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background: var(--whatsapp-dark);
+            color: var(--white);
+
+            transform: scale(1.05);
+        }
+
+
+        /* =====================================================
+           LARGE TABLET / SMALL LAPTOP
+        ====================================================== */
+
+        @media (max-width: 1199px) {
+
+            .navbar-nav .nav-link {
+                padding-left: 7px !important;
+                padding-right: 7px !important;
+
+                font-size: 0.78rem;
+            }
+
+            .btn-navbar-wa {
+                padding-left: 12px;
+                padding-right: 12px;
+
+                font-size: 0.76rem;
+            }
+
         }
 
 
@@ -1258,8 +1737,12 @@
 
         @media (max-width: 991px) {
 
+            .navbar-collapse {
+                padding-top: 12px;
+            }
+
             .navbar-nav {
-                padding-top: 10px;
+                gap: 0;
             }
 
             .navbar-nav .nav-link {
@@ -1267,22 +1750,30 @@
             }
 
             .btn-navbar-wa {
-                margin: 7px 0 12px;
                 width: 100%;
+
+                margin-top: 8px;
+                margin-bottom: 10px;
             }
 
             .hero {
                 min-height: auto;
-                padding: 75px 0;
+
+                padding:
+                    75px
+                    0
+                    70px;
             }
 
             .hero-visual {
                 min-height: 350px;
-                margin-top: 10px;
+
+                margin-top: 20px;
             }
 
             .advantage-visual {
                 min-height: 350px;
+
                 margin-top: 20px;
             }
 
@@ -1295,116 +1786,223 @@
 
         @media (max-width: 767px) {
 
+            html {
+                scroll-padding-top: 70px;
+            }
+
+            .container {
+                width: 100%;
+
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
             .section-padding {
-                padding: 60px 0;
+                padding:
+                    58px
+                    0;
             }
 
             .section-title {
-                font-size: 1.7rem;
+                font-size: 1.65rem;
             }
 
             .section-subtitle {
+                max-width: 100%;
+
                 margin-bottom: 32px;
-                font-size: 0.8rem;
+
+                font-size: 0.80rem;
+
                 line-height: 1.75;
             }
 
+            .title-line {
+                margin-bottom: 16px;
+            }
 
-            /* HERO */
+
+            /* -------------------------------------------------
+               NAVBAR
+            -------------------------------------------------- */
+
+            .navbar {
+                padding: 7px 0;
+            }
+
+            .navbar-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .brand-name {
+                font-size: 0.90rem;
+            }
+
+            .brand-subtitle {
+                font-size: 0.50rem;
+            }
+
+            .navbar-brand {
+                max-width: calc(100% - 55px);
+            }
+
+
+            /* -------------------------------------------------
+               HERO
+            -------------------------------------------------- */
 
             .hero {
-                padding: 58px 0 70px;
+                padding:
+                    52px
+                    0
+                    58px;
             }
 
             .hero h1 {
                 margin-bottom: 15px;
-                font-size: 2.15rem;
+
+                font-size:
+                    clamp(
+                        1.95rem,
+                        9vw,
+                        2.25rem
+                    );
+
                 line-height: 1.15;
             }
 
             .hero-description {
                 margin-bottom: 22px;
-                font-size: 0.84rem;
+
+                font-size: 0.80rem;
+
                 line-height: 1.75;
             }
 
             .hero-badge {
-                font-size: 0.63rem;
+                max-width: 100%;
+
+                padding:
+                    7px
+                    12px;
+
+                font-size: 0.60rem;
             }
 
             .hero-buttons {
-                display: flex;
+                width: 100%;
+
                 flex-direction: column;
-                gap: 10px;
+
+                gap: 9px;
             }
 
             .btn-hero-primary,
             .btn-hero-secondary {
                 width: 100%;
+
                 min-height: 46px;
+
+                padding:
+                    11px
+                    16px;
+
+                font-size: 0.78rem;
             }
 
             .hero-info {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 11px;
+                width: 100%;
 
-                margin-top: 28px;
+                display: grid;
+
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+
+                margin-top: 25px;
+            }
+
+            .hero-info-item {
+                width: 100%;
             }
 
             .hero-info-item span {
-                font-size: 0.7rem;
+                font-size: 0.68rem;
             }
 
             .hero-visual {
-                min-height: 300px;
-                margin-top: 10px;
+                min-height: 280px;
+
+                margin-top: 18px;
             }
 
             .hero-visual-card {
-                height: 300px;
+                width: 100%;
+                height: 270px;
+
                 border-radius: 20px;
             }
 
             .hero-floating-card {
                 right: 5px;
-                bottom: 10px;
+                bottom: 8px;
 
-                padding: 10px 12px;
+                max-width:
+                    calc(
+                        100% - 10px
+                    );
+
+                padding:
+                    9px
+                    11px;
+            }
+
+            .hero-floating-icon {
+                width: 34px;
+                height: 34px;
+
+                font-size: 16px;
             }
 
             .hero-floating-card strong {
-                font-size: 0.67rem;
+                font-size: 0.64rem;
             }
 
             .hero-floating-card small {
-                font-size: 0.56rem;
+                font-size: 0.54rem;
             }
 
 
-            /* SERVICES */
+            /* -------------------------------------------------
+               SERVICE
+            -------------------------------------------------- */
 
             .service-card {
                 padding: 21px;
             }
 
             .service-icon {
-                width: 55px;
-                height: 55px;
+                width: 54px;
+                height: 54px;
+
                 margin-bottom: 14px;
+
                 font-size: 24px;
             }
 
             .service-card h5 {
-                font-size: 0.95rem;
+                font-size: 0.94rem;
             }
 
             .service-card p {
-                font-size: 0.78rem;
+                font-size: 0.76rem;
             }
 
 
-            /* ADVANTAGES */
+            /* -------------------------------------------------
+               ADVANTAGE
+            -------------------------------------------------- */
 
             .section-title-left {
                 text-align: center;
@@ -1412,43 +2010,51 @@
 
             .title-line-left {
                 margin-left: auto;
+                margin-right: auto;
             }
 
             .advantage-item {
-                margin-bottom: 20px;
+                margin-bottom: 19px;
             }
 
             .advantage-icon {
                 width: 42px;
                 height: 42px;
+
                 font-size: 17px;
             }
 
             .advantage-item h5 {
-                font-size: 0.85rem;
+                font-size: 0.84rem;
             }
 
             .advantage-item p {
-                font-size: 0.73rem;
+                font-size: 0.72rem;
             }
 
             .advantage-visual {
-                min-height: 290px;
+                min-height: 285px;
+            }
+
+            .advantage-placeholder i {
+                font-size: 65px;
             }
 
 
-            /* ABOUT */
+            /* -------------------------------------------------
+               ABOUT
+            -------------------------------------------------- */
 
             .about-box {
                 padding: 23px;
             }
 
             .about-box h3 {
-                font-size: 1.1rem;
+                font-size: 1.10rem;
             }
 
             .about-box p {
-                font-size: 0.76rem;
+                font-size: 0.75rem;
             }
 
             .about-stat {
@@ -1456,83 +2062,206 @@
             }
 
             .about-stat h4 {
-                font-size: 1.2rem;
+                font-size: 1.10rem;
+            }
+
+            .about-stat p {
+                font-size: 0.64rem;
             }
 
 
-            /* GALLERY */
+            /* -------------------------------------------------
+               GALLERY
+            -------------------------------------------------- */
 
             .gallery-card {
-                height: 200px;
+                height: 185px;
+            }
+
+            .gallery-overlay {
+                padding:
+                    17px
+                    12px
+                    12px;
+            }
+
+            .gallery-overlay h6 {
+                font-size: 0.70rem;
+            }
+
+            .gallery-overlay small {
+                font-size: 0.56rem;
             }
 
 
-            /* AREA */
+            /* -------------------------------------------------
+               AREA
+            -------------------------------------------------- */
 
             .area-card {
-                padding: 17px 10px;
+                padding:
+                    16px
+                    8px;
+            }
+
+            .area-card i {
+                font-size: 20px;
             }
 
             .area-card h6 {
-                font-size: 0.72rem;
+                font-size: 0.69rem;
+            }
+
+            .area-card small {
+                font-size: 0.56rem;
             }
 
 
-            /* TESTIMONIAL */
+            /* -------------------------------------------------
+               TESTIMONIAL
+            -------------------------------------------------- */
 
             .testimonial-card {
                 padding: 20px;
             }
 
+            .testimonial-text {
+                font-size: 0.75rem;
+            }
 
-            /* CONTACT */
+
+            /* -------------------------------------------------
+               CONTACT
+            -------------------------------------------------- */
 
             .contact-card {
                 padding: 22px;
             }
 
+            .contact-item {
+                gap: 10px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .contact-item h6 {
+                font-size: 0.76rem;
+            }
+
+            .contact-item p {
+                font-size: 0.71rem;
+            }
+
             .map-container {
-                min-height: 300px;
+                min-height: 290px;
+
                 border-radius: 15px;
             }
 
             .map-container iframe {
-                height: 300px;
+                height: 290px;
             }
 
 
-            /* CTA */
+            /* -------------------------------------------------
+               CTA
+            -------------------------------------------------- */
 
             .cta-section {
-                padding: 50px 15px;
+                padding:
+                    48px
+                    16px;
             }
 
             .cta-content h2 {
-                font-size: 1.55rem;
+                font-size: 1.45rem;
             }
 
             .cta-content p {
-                font-size: 0.78rem;
+                font-size: 0.76rem;
             }
 
             .btn-cta {
                 width: 100%;
+
+                min-height: 46px;
+
+                font-size: 0.78rem;
             }
 
 
-            /* FOOTER */
+            /* -------------------------------------------------
+               FOOTER
+            -------------------------------------------------- */
 
             .footer {
-                padding-top: 45px;
+                padding:
+                    45px
+                    0
+                    25px;
+            }
+
+            /*
+             * PENTING:
+             * Footer HP dibuat 1 kolom penuh.
+             * Ini mencegah email panjang mendorong
+             * layout ke luar viewport.
+             */
+
+            .footer .row > [class*="col-"] {
+                width: 100% !important;
+
+                max-width: 100% !important;
+
+                flex: 0 0 100% !important;
+            }
+
+            .footer-description,
+            .footer-contact,
+            .footer-links {
+                width: 100%;
+                max-width: 100%;
             }
 
             .footer-description {
-                font-size: 0.72rem;
+                font-size: 0.71rem;
             }
 
             .footer-links a,
             .footer-contact {
-                font-size: 0.68rem;
+                font-size: 0.69rem;
+            }
+
+            .footer-contact p {
+                width: 100%;
+            }
+
+            .footer-email {
+                max-width: 100%;
+            }
+
+            .copyright {
+                font-size: 0.58rem;
+
+                line-height: 1.6;
+            }
+
+
+            /* -------------------------------------------------
+               WHATSAPP
+            -------------------------------------------------- */
+
+            .whatsapp-float {
+                right: 15px;
+                bottom: 15px;
+
+                width: 53px;
+                height: 53px;
+
+                font-size: 24px;
             }
 
         }
@@ -1545,30 +2274,78 @@
         @media (max-width: 420px) {
 
             .container {
-                padding-left: 16px;
-                padding-right: 16px;
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .hero {
+                padding:
+                    45px
+                    0
+                    52px;
             }
 
             .hero h1 {
-                font-size: 1.9rem;
+                font-size: 1.85rem;
             }
 
             .hero-description {
-                font-size: 0.78rem;
+                font-size: 0.75rem;
             }
 
             .hero-visual-card {
-                height: 270px;
+                height: 250px;
             }
 
             .gallery-card {
-                height: 180px;
+                height: 170px;
+            }
+
+            .contact-card {
+                padding: 19px;
+            }
+
+            .footer {
+                padding-top: 40px;
             }
 
             .whatsapp-float {
-                width: 52px;
-                height: 52px;
-                font-size: 24px;
+                right: 14px;
+                bottom: 14px;
+
+                width: 50px;
+                height: 50px;
+
+                font-size: 23px;
+            }
+
+        }
+
+
+        /* =====================================================
+           EXTRA SMALL DEVICES
+        ====================================================== */
+
+        @media (max-width: 350px) {
+
+            .brand-name {
+                font-size: 0.82rem;
+            }
+
+            .brand-subtitle {
+                font-size: 0.45rem;
+            }
+
+            .hero h1 {
+                font-size: 1.68rem;
+            }
+
+            .hero-description {
+                font-size: 0.70rem;
+            }
+
+            .section-title {
+                font-size: 1.45rem;
             }
 
         }
@@ -1588,6 +2365,8 @@
     <nav class="navbar navbar-expand-lg sticky-top">
 
         <div class="container">
+
+            <!-- BRAND -->
 
             <a
                 href="#beranda"
@@ -1615,18 +2394,24 @@
             </a>
 
 
+            <!-- MOBILE TOGGLE -->
+
             <button
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
-                aria-label="Menu"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Menu navigasi"
             >
 
                 <span class="navbar-toggler-icon"></span>
 
             </button>
 
+
+            <!-- NAVIGATION -->
 
             <div
                 class="collapse navbar-collapse"
@@ -1636,49 +2421,73 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#beranda">
+                        <a
+                            class="nav-link"
+                            href="#beranda"
+                        >
                             Beranda
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#layanan">
+                        <a
+                            class="nav-link"
+                            href="#layanan"
+                        >
                             Layanan
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#keunggulan">
+                        <a
+                            class="nav-link"
+                            href="#keunggulan"
+                        >
                             Keunggulan
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#tentang">
+                        <a
+                            class="nav-link"
+                            href="#tentang"
+                        >
                             Tentang
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#galeri">
+                        <a
+                            class="nav-link"
+                            href="#galeri"
+                        >
                             Galeri
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#area">
+                        <a
+                            class="nav-link"
+                            href="#area"
+                        >
                             Area
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimoni">
+                        <a
+                            class="nav-link"
+                            href="#testimoni"
+                        >
                             Testimoni
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#kontak">
+                        <a
+                            class="nav-link"
+                            href="#kontak"
+                        >
                             Kontak
                         </a>
                     </li>
@@ -1721,7 +2530,9 @@
 
         <div class="container">
 
-            <div class="row align-items-center">
+            <div class="row align-items-center g-4">
+
+                <!-- HERO TEXT -->
 
                 <div class="col-lg-7">
 
@@ -1739,6 +2550,7 @@
                         <h1>
 
                             Solusi Instalasi Listrik
+
                             <br>
 
                             <span>
@@ -1750,10 +2562,11 @@
 
                         <p class="hero-description">
 
-                            SCE membantu menyediakan solusi kelistrikan
-                            untuk rumah, kantor, toko, dan berbagai
-                            kebutuhan lainnya dengan pengerjaan yang
-                            mengutamakan keamanan dan ketelitian.
+                            SCE membantu menyediakan solusi
+                            kelistrikan untuk rumah, kantor,
+                            toko, dan berbagai kebutuhan lainnya
+                            dengan pengerjaan yang mengutamakan
+                            keamanan dan ketelitian.
 
                         </p>
 
@@ -1800,6 +2613,7 @@
 
                             </div>
 
+
                             <div class="hero-info-item">
 
                                 <i class="bi bi-tools"></i>
@@ -1809,6 +2623,7 @@
                                 </span>
 
                             </div>
+
 
                             <div class="hero-info-item">
 
@@ -1827,6 +2642,8 @@
                 </div>
 
 
+                <!-- HERO VISUAL -->
+
                 <div class="col-lg-5">
 
                     <div class="hero-visual">
@@ -1844,7 +2661,7 @@
 
                             <div
                                 class="hero-placeholder"
-                                style="display: none;"
+                                style="display:none;"
                             >
 
                                 <i class="bi bi-lightning-charge-fill"></i>
@@ -1925,6 +2742,8 @@
             <div class="row g-3">
 
 
+                <!-- SERVICE 1 -->
+
                 <div class="col-12 col-md-6 col-lg-4">
 
                     <div class="service-card">
@@ -1942,7 +2761,10 @@
                             rumah, kantor, toko, maupun bangunan baru.
                         </p>
 
-                        <a href="#kontak" class="service-link">
+                        <a
+                            href="#kontak"
+                            class="service-link"
+                        >
                             Konsultasikan
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -1951,6 +2773,8 @@
 
                 </div>
 
+
+                <!-- SERVICE 2 -->
 
                 <div class="col-12 col-md-6 col-lg-4">
 
@@ -1969,7 +2793,10 @@
                             maupun MCB yang sering turun.
                         </p>
 
-                        <a href="#kontak" class="service-link">
+                        <a
+                            href="#kontak"
+                            class="service-link"
+                        >
                             Konsultasikan
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -1978,6 +2805,8 @@
 
                 </div>
 
+
+                <!-- SERVICE 3 -->
 
                 <div class="col-12 col-md-6 col-lg-4">
 
@@ -1996,7 +2825,10 @@
                             panel distribusi listrik.
                         </p>
 
-                        <a href="#kontak" class="service-link">
+                        <a
+                            href="#kontak"
+                            class="service-link"
+                        >
                             Konsultasikan
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -2005,6 +2837,8 @@
 
                 </div>
 
+
+                <!-- SERVICE 4 -->
 
                 <div class="col-12 col-md-6 col-lg-4">
 
@@ -2023,7 +2857,10 @@
                             penangkal petir.
                         </p>
 
-                        <a href="#kontak" class="service-link">
+                        <a
+                            href="#kontak"
+                            class="service-link"
+                        >
                             Konsultasikan
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -2032,6 +2869,8 @@
 
                 </div>
 
+
+                <!-- SERVICE 5 -->
 
                 <div class="col-12 col-md-6 col-lg-4">
 
@@ -2050,7 +2889,10 @@
                             untuk menjaga instalasi tetap optimal.
                         </p>
 
-                        <a href="#kontak" class="service-link">
+                        <a
+                            href="#kontak"
+                            class="service-link"
+                        >
                             Konsultasikan
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -2059,6 +2901,8 @@
 
                 </div>
 
+
+                <!-- SERVICE 6 -->
 
                 <div class="col-12 col-md-6 col-lg-4">
 
@@ -2077,7 +2921,10 @@
                             menemukan potensi masalah kelistrikan.
                         </p>
 
-                        <a href="#kontak" class="service-link">
+                        <a
+                            href="#kontak"
+                            class="service-link"
+                        >
                             Konsultasikan
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -2107,6 +2954,8 @@
 
             <div class="row align-items-center g-4">
 
+                <!-- TEXT -->
+
                 <div class="col-lg-6">
 
                     <h2 class="section-title section-title-left">
@@ -2131,6 +2980,7 @@
                         </div>
 
                         <div>
+
                             <h5>
                                 Teknisi Profesional
                             </h5>
@@ -2139,6 +2989,7 @@
                                 Pekerjaan dilakukan dengan pendekatan
                                 profesional dan sesuai kebutuhan.
                             </p>
+
                         </div>
 
                     </div>
@@ -2151,6 +3002,7 @@
                         </div>
 
                         <div>
+
                             <h5>
                                 Mengutamakan Keselamatan
                             </h5>
@@ -2159,6 +3011,7 @@
                                 Keselamatan instalasi dan pengguna
                                 menjadi salah satu prioritas.
                             </p>
+
                         </div>
 
                     </div>
@@ -2171,6 +3024,7 @@
                         </div>
 
                         <div>
+
                             <h5>
                                 Respon Cepat
                             </h5>
@@ -2179,6 +3033,7 @@
                                 Kami berusaha memberikan respon
                                 secepat mungkin untuk konsultasi.
                             </p>
+
                         </div>
 
                     </div>
@@ -2191,6 +3046,7 @@
                         </div>
 
                         <div>
+
                             <h5>
                                 Konsultasi
                             </h5>
@@ -2199,12 +3055,15 @@
                                 Konsultasikan kebutuhan sebelum
                                 pekerjaan dilakukan.
                             </p>
+
                         </div>
 
                     </div>
 
                 </div>
 
+
+                <!-- VISUAL -->
 
                 <div class="col-lg-6">
 
@@ -2236,6 +3095,7 @@
                             </p>
 
                         </div>
+
 
                         <div class="advantage-overlay">
 
@@ -2284,13 +3144,16 @@
             <div class="title-line"></div>
 
             <p class="section-subtitle">
-                Mengenal lebih dekat SCE - Sentral Computer n Electronic.
+
+                Mengenal lebih dekat
+                SCE - Sentral Computer n Electronic.
+
             </p>
 
 
             <div class="row g-3">
 
-                <div class="col-lg-8">
+                <div class="col-12 col-lg-8">
 
                     <div class="about-box">
 
@@ -2309,8 +3172,8 @@
                         <p>
 
                             Dalam pekerjaan kelistrikan, kami
-                            mengutamakan ketelitian, keamanan, serta
-                            komunikasi yang baik dengan pelanggan.
+                            mengutamakan ketelitian, keamanan,
+                            serta komunikasi yang baik dengan pelanggan.
 
                         </p>
 
@@ -2400,14 +3263,19 @@
             <div class="title-line"></div>
 
             <p class="section-subtitle">
-                Dokumentasi pekerjaan dan aktivitas SCE di lapangan.
+
+                Dokumentasi pekerjaan dan aktivitas
+                SCE di lapangan.
+
             </p>
 
 
             <div class="row g-3">
 
-                <!-- 1 -->
-                <div class="col-6 col-md-6 col-lg-4">
+
+                <!-- PROJECT 1 -->
+
+                <div class="col-6 col-lg-4">
 
                     <div class="gallery-card">
 
@@ -2450,8 +3318,9 @@
                 </div>
 
 
-                <!-- 2 -->
-                <div class="col-6 col-md-6 col-lg-4">
+                <!-- PROJECT 2 -->
+
+                <div class="col-6 col-lg-4">
 
                     <div class="gallery-card">
 
@@ -2494,8 +3363,9 @@
                 </div>
 
 
-                <!-- 3 -->
-                <div class="col-6 col-md-6 col-lg-4">
+                <!-- PROJECT 3 -->
+
+                <div class="col-6 col-lg-4">
 
                     <div class="gallery-card">
 
@@ -2538,8 +3408,9 @@
                 </div>
 
 
-                <!-- 4 -->
-                <div class="col-6 col-md-6 col-lg-4">
+                <!-- PROJECT 4 -->
+
+                <div class="col-6 col-lg-4">
 
                     <div class="gallery-card">
 
@@ -2582,8 +3453,9 @@
                 </div>
 
 
-                <!-- 5 -->
-                <div class="col-6 col-md-6 col-lg-4">
+                <!-- PROJECT 5 -->
+
+                <div class="col-6 col-lg-4">
 
                     <div class="gallery-card">
 
@@ -2626,8 +3498,9 @@
                 </div>
 
 
-                <!-- 6 -->
-                <div class="col-6 col-md-6 col-lg-4">
+                <!-- PROJECT 6 -->
+
+                <div class="col-6 col-lg-4">
 
                     <div class="gallery-card">
 
@@ -2678,7 +3551,7 @@
 
 
     <!-- =====================================================
-         AREA
+         AREA LAYANAN
     ====================================================== -->
 
     <section
@@ -2689,8 +3562,7 @@
         <div class="container">
 
             <h2
-                class="section-title"
-                style="color:white;"
+                class="section-title section-title-light"
             >
                 Area Layanan
             </h2>
@@ -2699,61 +3571,129 @@
 
             <p
                 class="section-subtitle"
-                style="color:rgba(255,255,255,.8);"
+                style="color: rgba(255,255,255,.8);"
             >
-                Melayani kebutuhan kelistrikan di wilayah
-                Banjarmasin dan sekitarnya.
+
+                Melayani kebutuhan kelistrikan
+                di wilayah Banjarmasin dan sekitarnya.
+
             </p>
 
 
             <div class="row g-2">
 
-                <div class="col-6 col-md-4">
-                    <div class="area-card">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <h6>Banjarmasin Utara</h6>
-                        <small>Kalimantan Selatan</small>
-                    </div>
-                </div>
 
                 <div class="col-6 col-md-4">
+
                     <div class="area-card">
+
                         <i class="bi bi-geo-alt-fill"></i>
-                        <h6>Banjarmasin Selatan</h6>
-                        <small>Kalimantan Selatan</small>
+
+                        <h6>
+                            Banjarmasin Utara
+                        </h6>
+
+                        <small>
+                            Kalimantan Selatan
+                        </small>
+
                     </div>
+
                 </div>
 
-                <div class="col-6 col-md-4">
-                    <div class="area-card">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <h6>Banjarmasin Tengah</h6>
-                        <small>Kalimantan Selatan</small>
-                    </div>
-                </div>
 
                 <div class="col-6 col-md-4">
+
                     <div class="area-card">
+
                         <i class="bi bi-geo-alt-fill"></i>
-                        <h6>Banjarmasin Timur</h6>
-                        <small>Kalimantan Selatan</small>
+
+                        <h6>
+                            Banjarmasin Selatan
+                        </h6>
+
+                        <small>
+                            Kalimantan Selatan
+                        </small>
+
                     </div>
+
                 </div>
 
-                <div class="col-6 col-md-4">
-                    <div class="area-card">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <h6>Banjarmasin Barat</h6>
-                        <small>Kalimantan Selatan</small>
-                    </div>
-                </div>
 
                 <div class="col-6 col-md-4">
+
                     <div class="area-card">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <h6>
+                            Banjarmasin Tengah
+                        </h6>
+
+                        <small>
+                            Kalimantan Selatan
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-md-4">
+
+                    <div class="area-card">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <h6>
+                            Banjarmasin Timur
+                        </h6>
+
+                        <small>
+                            Kalimantan Selatan
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-md-4">
+
+                    <div class="area-card">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <h6>
+                            Banjarmasin Barat
+                        </h6>
+
+                        <small>
+                            Kalimantan Selatan
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-md-4">
+
+                    <div class="area-card">
+
                         <i class="bi bi-plus-circle"></i>
-                        <h6>Area Sekitar</h6>
-                        <small>Hubungi kami untuk informasi</small>
+
+                        <h6>
+                            Area Sekitar
+                        </h6>
+
+                        <small>
+                            Hubungi kami untuk informasi
+                        </small>
+
                     </div>
+
                 </div>
 
             </div>
@@ -2782,12 +3722,17 @@
             <div class="title-line"></div>
 
             <p class="section-subtitle">
-                Gunakan bagian ini untuk mengganti dengan
-                testimoni asli pelanggan SCE.
+
+                Gunakan bagian ini untuk mengganti
+                dengan testimoni asli pelanggan SCE.
+
             </p>
 
 
             <div class="row g-3">
+
+
+                <!-- TESTIMONIAL 1 -->
 
                 <div class="col-12 col-md-4">
 
@@ -2822,8 +3767,15 @@
                             </div>
 
                             <div>
-                                <strong>Pelanggan SCE</strong>
-                                <small>Banjarmasin</small>
+
+                                <strong>
+                                    Pelanggan SCE
+                                </strong>
+
+                                <small>
+                                    Banjarmasin
+                                </small>
+
                             </div>
 
                         </div>
@@ -2832,6 +3784,8 @@
 
                 </div>
 
+
+                <!-- TESTIMONIAL 2 -->
 
                 <div class="col-12 col-md-4">
 
@@ -2865,8 +3819,15 @@
                             </div>
 
                             <div>
-                                <strong>Pelanggan SCE</strong>
-                                <small>Banjarmasin</small>
+
+                                <strong>
+                                    Pelanggan SCE
+                                </strong>
+
+                                <small>
+                                    Banjarmasin
+                                </small>
+
                             </div>
 
                         </div>
@@ -2875,6 +3836,8 @@
 
                 </div>
 
+
+                <!-- TESTIMONIAL 3 -->
 
                 <div class="col-12 col-md-4">
 
@@ -2908,8 +3871,15 @@
                             </div>
 
                             <div>
-                                <strong>Pelanggan SCE</strong>
-                                <small>Banjarmasin</small>
+
+                                <strong>
+                                    Pelanggan SCE
+                                </strong>
+
+                                <small>
+                                    Banjarmasin
+                                </small>
+
                             </div>
 
                         </div>
@@ -2944,21 +3914,31 @@
             <div class="title-line"></div>
 
             <p class="section-subtitle">
+
                 Hubungi kami untuk konsultasi dan informasi
                 kebutuhan pekerjaan kelistrikan Anda.
+
             </p>
 
 
             <div class="row g-3">
 
-                <div class="col-lg-5">
+
+                <!-- CONTACT INFO -->
+
+                <div class="col-12 col-lg-5">
 
                     <div class="contact-card">
+
+
+                        <!-- ADDRESS -->
 
                         <div class="contact-item">
 
                             <div class="contact-icon">
+
                                 <i class="bi bi-geo-alt-fill"></i>
+
                             </div>
 
                             <div>
@@ -2968,10 +3948,12 @@
                                 </h6>
 
                                 <p>
+
                                     Komp. Perdana Mandiri,
                                     Jl. Padat Karya Blok C2,
                                     Banjarmasin Utara,
                                     Kalimantan Selatan 70122
+
                                 </p>
 
                             </div>
@@ -2979,10 +3961,14 @@
                         </div>
 
 
+                        <!-- WHATSAPP -->
+
                         <div class="contact-item">
 
                             <div class="contact-icon">
+
                                 <i class="bi bi-telephone-fill"></i>
+
                             </div>
 
                             <div>
@@ -3000,10 +3986,14 @@
                         </div>
 
 
+                        <!-- EMAIL -->
+
                         <div class="contact-item">
 
                             <div class="contact-icon">
+
                                 <i class="bi bi-envelope-fill"></i>
+
                             </div>
 
                             <div>
@@ -3012,14 +4002,18 @@
                                     Email
                                 </h6>
 
-                                <p>
+                                <p class="contact-email">
+
                                     sentralcomputernelectronic@gmail.com
+
                                 </p>
 
                             </div>
 
                         </div>
 
+
+                        <!-- WHATSAPP BUTTON -->
 
                         <a
                             href="https://wa.me/6285100559960?text=Halo%20SCE,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20kelistrikan."
@@ -3039,7 +4033,9 @@
                 </div>
 
 
-                <div class="col-lg-7">
+                <!-- GOOGLE MAPS -->
+
+                <div class="col-12 col-lg-7">
 
                     <div class="map-container">
 
@@ -3067,7 +4063,9 @@
          CTA
     ====================================================== -->
 
-    <section class="cta-section">
+    <section
+        class="cta-section"
+    >
 
         <div class="container">
 
@@ -3112,7 +4110,10 @@
 
             <div class="row g-4">
 
-                <div class="col-12 col-md-5">
+
+                <!-- COMPANY -->
+
+                <div class="col-12 col-md-5 footer-column">
 
                     <div class="footer-logo">
 
@@ -3127,13 +4128,14 @@
                                 SCE
                             </strong>
 
-                            <small class="d-block text-secondary">
+                            <small>
                                 Sentral Computer n Electronic
                             </small>
 
                         </div>
 
                     </div>
+
 
                     <p class="footer-description">
 
@@ -3146,7 +4148,9 @@
                 </div>
 
 
-                <div class="col-6 col-md-3">
+                <!-- NAVIGATION -->
+
+                <div class="col-6 col-md-3 footer-column">
 
                     <h6>
                         Navigasi
@@ -3189,7 +4193,9 @@
                 </div>
 
 
-                <div class="col-6 col-md-4">
+                <!-- CONTACT -->
+
+                <div class="col-6 col-md-4 footer-column">
 
                     <h6>
                         Kontak
@@ -3197,19 +4203,44 @@
 
                     <div class="footer-contact">
 
+
+                        <!-- LOCATION -->
+
                         <p>
+
                             <i class="bi bi-geo-alt-fill"></i>
-                            Banjarmasin, Kalimantan Selatan
+
+                            <span>
+                                Banjarmasin,
+                                Kalimantan Selatan
+                            </span>
+
                         </p>
 
+
+                        <!-- PHONE -->
+
                         <p>
+
                             <i class="bi bi-telephone-fill"></i>
-                            +62 851-0055-9960
+
+                            <span>
+                                +62 851-0055-9960
+                            </span>
+
                         </p>
 
+
+                        <!-- EMAIL -->
+
                         <p>
+
                             <i class="bi bi-envelope-fill"></i>
-                        sentralcomputernelectronic@gmail.com
+
+                            <span class="footer-email">
+                                sentralcomputernelectronic@gmail.com
+                            </span>
+
                         </p>
 
                     </div>
@@ -3255,14 +4286,14 @@
 
 
     <!-- =====================================================
-         BOOTSTRAP JS
+         BOOTSTRAP JAVASCRIPT
     ====================================================== -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     ></script>
 
+
 </body>
 
 </html>
-```
